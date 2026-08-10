@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+data/*.csv
+outputs/*.csv
+outputs/*.json
+outputs/*.png
+outputs/*.log
+!data/.gitkeep
+!outputs/.gitkeep
+!data/interactions_real_rich_scaled_processed.csv
