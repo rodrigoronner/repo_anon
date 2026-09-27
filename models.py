@@ -33,7 +33,20 @@ class RecommenderNet(nn.Module):
         return self.mlp(x).squeeze(-1)
 
 
+class LogReg(nn.Module):
+    """Logistic regression on the three aggregate features (no embeddings)."""
+
+    def __init__(self):
+        super().__init__()
+        self.linear = nn.Linear(len(FEAT_COLS), 1)
+
+    def forward(self, u, s, f):
+        return self.linear(f).squeeze(-1)
+
+
 def build(meta, arch):
+    if arch.get("model") == "logreg":
+        return LogReg()
     return RecommenderNet(meta["num_users"], meta["num_skills"], arch["emb_dim"],
                           arch["h1"], arch["h2"], arch["dropout"], arch.get("inputs", "all"))
 

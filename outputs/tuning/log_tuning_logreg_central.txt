@@ -1,0 +1,2 @@
+[I 2026-09-27 09:02:05,528] A new study created in Journal with name: centralized_logreg
+[centralized_logreg] best val AUC 0.7779 | {'optimizer': 'sgd', 'lr_sgd': 1.8096556742423782, 'weight_decay': 3.5945335426002995e-07, 'batch_size': 128}

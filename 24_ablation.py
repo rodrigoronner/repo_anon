@@ -19,6 +19,7 @@ import os
 import sys
 from multiprocessing import get_context
 
+import numpy as np
 import pandas as pd
 
 from common import dump, evaluate, load, read
@@ -66,7 +67,7 @@ def job(args):
     print(f"{name:28s} seed {seed} sel {sel:4d} | AUC {m['roc_auc']:.4f} "
           f"BalAcc {m['balanced_accuracy']:.4f} pos {m['positive_rate']:.2f}", flush=True)
     rows = [dict(r, condition=name, seed=seed) for r in rows] if rows else []
-    return res, rows
+    return res, rows, best["p_test"]
 
 
 if __name__ == "__main__":
@@ -77,7 +78,11 @@ if __name__ == "__main__":
     jobs = [(n, s) for n in order for s in EVAL_SEEDS]
     with get_context("spawn").Pool(N_WORKERS) as pool:
         out = pool.map(job, jobs, chunksize=1)
-    runs, rounds = [r for r, _ in out], pd.DataFrame([r for _, rows in out for r in rows])
+    pred_dir = os.path.join(EVAL_DIR, "ablation_preds")
+    os.makedirs(pred_dir, exist_ok=True)
+    for n in conds:  # test predictions at the selected checkpoint, seeds in EVAL_SEEDS order
+        np.save(os.path.join(pred_dir, f"{n}.npy"), np.array([p for (_, _, p), j in zip(out, jobs) if j[0] == n]))
+    runs, rounds = [r for r, _, _ in out], pd.DataFrame([r for _, rows, _ in out for r in rows])
     if sys.argv[1:]:
         old = read(os.path.join(EVAL_DIR, "ablation.json"))
         runs = [r for r in old["runs"] if r["condition"] not in conds] + runs

@@ -1,0 +1,23 @@
+{
+  "study": "centralized_logreg",
+  "best_value": 0.7778509809631275,
+  "best_params": {
+    "optimizer": "sgd",
+    "lr_sgd": 1.8096556742423782,
+    "weight_decay": 3.5945335426002995e-07,
+    "batch_size": 128
+  },
+  "best_user_attrs": {
+    "best_epoch": 3
+  },
+  "best_trial": 60,
+  "n_trials": 108,
+  "n_complete": 74,
+  "n_pruned": 34,
+  "n_failed": 0,
+  "param_importances": {
+    "weight_decay": 0.5887680366529134,
+    "batch_size": 0.3746650289377701,
+    "optimizer": 0.03656693440931648
+  }
+}

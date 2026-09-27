@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Full pipeline from the raw ASSISTments file to the manuscript tables and figures.
-# Environment: Python 3.11 with requirements.txt. Wall time on a 10-core laptop: about 5 h.
+# Environment: Python 3.11 with requirements.txt. Wall time on a 10-core laptop: about 6 h.
 set -euo pipefail
 cd "$(dirname "$0")"
 PY=${PY:-python}
@@ -26,6 +26,8 @@ $PY 03_loo_leakage_diagnostic.py     # shows why leave-one-out encoding is not u
 $PY 10_tune_xgboost.py            # Optuna, validation AUC
 $PY 11_tune_centralized_dnn.py
 $PY 12_tune_federated.py          # one study per strategy; architecture frozen from step 11
+$PY 12_tune_federated.py FedAvg_rowwise LogReg   # row-wise aggregation; federated logistic regression
+$PY 13_tune_logreg_centralized.py # centralized logistic regression
 
 $PY 20_eval_xgboost.py            # 10 evaluation seeds; checkpoints and thresholds chosen on validation
 $PY 21_eval_centralized_dnn.py
@@ -33,8 +35,10 @@ $PY 22_eval_federated.py
 $PY 23_flower_crosscheck.py       # Flower 1.7 with matched sampling, seed 42 x 100 rounds
 $PY 24_ablation.py               # input blocks and weight decay on the embedding tables
 $PY 25_embedding_diagnostic.py   # embedding norms at initialization and after training
+$PY 26_eval_extensions.py        # row-wise aggregation and logistic regression, 10 seeds
 
 $PY 30_analysis.py
 $PY 31_figures.py
 $PY 32_latex_tables.py
 $PY 33_ablation_analysis.py
+$PY 34_review_analyses.py        # per-student AUC, agreement, student bootstrap, equivalence margins

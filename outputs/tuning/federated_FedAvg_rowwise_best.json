@@ -1,0 +1,25 @@
+{
+  "study": "federated_FedAvg_rowwise",
+  "best_value": 0.7938351593685922,
+  "best_params": {
+    "optimizer": "sgd",
+    "lr_sgd": 0.3042643626496225,
+    "local_epochs": 5,
+    "batch_size": 16,
+    "weight_decay": 0.0018210736647671223
+  },
+  "best_user_attrs": {
+    "best_round": 622
+  },
+  "best_trial": 23,
+  "n_trials": 38,
+  "n_complete": 15,
+  "n_pruned": 23,
+  "n_failed": 0,
+  "param_importances": {
+    "local_epochs": 0.6635457449831609,
+    "batch_size": 0.23314722473241142,
+    "weight_decay": 0.062141807170218825,
+    "optimizer": 0.04116522311420895
+  }
+}

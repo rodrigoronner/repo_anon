@@ -1,0 +1,531 @@
+{
+  "n_students_eligible": 825,
+  "n_pairs_eligible": 8534,
+  "models": {
+    "xgboost": {
+      "label": "XGBoost, centralized",
+      "global_auc": [
+        0.7887140532025487,
+        0.0011539808405574951
+      ],
+      "per_student_auc": [
+        0.731134376848131,
+        0.0039854827926456456
+      ]
+    },
+    "cdnn_tuned": {
+      "label": "Recommender, centralized",
+      "global_auc": [
+        0.7884920375698867,
+        0.0017138401611996408
+      ],
+      "per_student_auc": [
+        0.7359887502988094,
+        0.003893435238425651
+      ]
+    },
+    "fl_FedAvg": {
+      "label": "Recommender, FedAvg",
+      "global_auc": [
+        0.776999155733949,
+        0.0011554322464798238
+      ],
+      "per_student_auc": [
+        0.7343397900603921,
+        0.002991068722182019
+      ]
+    },
+    "fl_FedProx_mu0.1": {
+      "label": "Recommender, FedProx mu=0.1",
+      "global_auc": [
+        0.7781319926628059,
+        0.0005413567149605133
+      ],
+      "per_student_auc": [
+        0.7317930152954174,
+        0.0020198686469438554
+      ]
+    },
+    "fl_FedProx_mu0.5": {
+      "label": "Recommender, FedProx mu=0.5",
+      "global_auc": [
+        0.776921615711659,
+        0.0010615471622387252
+      ],
+      "per_student_auc": [
+        0.7326602051561186,
+        0.002016547365394149
+      ]
+    },
+    "fl_FedProx_mu1.0": {
+      "label": "Recommender, FedProx mu=1.0",
+      "global_auc": [
+        0.7752120886841631,
+        0.0028583046653668184
+      ],
+      "per_student_auc": [
+        0.7116181476871207,
+        0.00377146017090226
+      ]
+    },
+    "fl_FedProx_muTuned": {
+      "label": "Recommender, FedProx mu tuned",
+      "global_auc": [
+        0.7779836637038909,
+        0.003713068184029256
+      ],
+      "per_student_auc": [
+        0.7120394732951978,
+        0.007108512789337712
+      ]
+    },
+    "fl_FedAvg_rowwise": {
+      "label": "Recommender, FedAvg, row-wise aggregation (tuned)",
+      "global_auc": [
+        0.7667649044716625,
+        0.003944147195018359
+      ],
+      "per_student_auc": [
+        0.7118305882763314,
+        0.008606302916537191
+      ]
+    },
+    "fl_FedAvg_rowwise_samecfg": {
+      "label": "Recommender, FedAvg, row-wise aggregation (FedAvg configuration)",
+      "global_auc": [
+        0.7770291029794443,
+        0.0012809090927737947
+      ],
+      "per_student_auc": [
+        0.7384101269667445,
+        0.003183842101433604
+      ]
+    },
+    "clr_tuned": {
+      "label": "Logistic regression, centralized",
+      "global_auc": [
+        0.7796434395088937,
+        0.0012409532319483478
+      ],
+      "per_student_auc": [
+        0.7199704794420764,
+        0.0
+      ]
+    },
+    "fl_LogReg": {
+      "label": "Logistic regression, FedAvg",
+      "global_auc": [
+        0.7793547569052909,
+        0.0010619368167288379
+      ],
+      "per_student_auc": [
+        0.7199704794420764,
+        0.0
+      ]
+    },
+    "cdnn_features_only": {
+      "label": "Recommender without embeddings, centralized",
+      "global_auc": [
+        0.7793179064369891,
+        0.0008781136840720938
+      ],
+      "per_student_auc": [
+        0.7199704794420764,
+        0.0
+      ]
+    },
+    "FedAvg_features_only": {
+      "label": "Recommender without embeddings, FedAvg",
+      "global_auc": [
+        0.7789644371824315,
+        0.00040250556863698103
+      ],
+      "per_student_auc": [
+        0.7199704794420764,
+        0.0
+      ]
+    },
+    "cdnn_v1": {
+      "label": "Recommender, centralized, preliminary configuration",
+      "global_auc": [
+        0.7749914660572053,
+        0.0033141081330330833
+      ],
+      "per_student_auc": [
+        0.7178846169562909,
+        0.007863242018043448
+      ]
+    },
+    "fl_FedAvg_v1protocol": {
+      "label": "Recommender, FedAvg, preliminary configuration",
+      "global_auc": [
+        0.6301576107508471,
+        0.008387130206236357
+      ],
+      "per_student_auc": [
+        0.6849935446063147,
+        0.011028020376758579
+      ]
+    },
+    "skill_history_mean": {
+      "label": "Skill history mean (no model)",
+      "global_auc": [
+        0.6993943848272868,
+        0.0
+      ],
+      "per_student_auc": [
+        0.7199704794420764,
+        0.0
+      ]
+    },
+    "student_history_mean": {
+      "label": "Student history mean (no model)",
+      "global_auc": [
+        0.689403467414649,
+        0.0
+      ],
+      "per_student_auc": [
+        0.5,
+        0.0
+      ]
+    }
+  },
+  "agreement": {
+    "fl_FedAvg": {
+      "spearman_median": 0.9757575757575757,
+      "spearman_mean": 0.9197206696557352,
+      "n_students": 949,
+      "top1_agreement": 0.8871119473189087,
+      "n_top1": 1063
+    },
+    "fl_FedProx_mu0.1": {
+      "spearman_median": 0.9842105263157893,
+      "spearman_mean": 0.940194280614502,
+      "n_students": 949,
+      "top1_agreement": 0.9266227657572906,
+      "n_top1": 1063
+    },
+    "fl_FedProx_mu0.5": {
+      "spearman_median": 0.9860139860139862,
+      "spearman_mean": 0.9392201638994943,
+      "n_students": 949,
+      "top1_agreement": 0.9303857008466604,
+      "n_top1": 1063
+    },
+    "fl_FedProx_mu1.0": {
+      "spearman_median": 0.8522727272727272,
+      "spearman_mean": 0.7942519879231956,
+      "n_students": 949,
+      "top1_agreement": 0.6368767638758231,
+      "n_top1": 1063
+    },
+    "fl_FedProx_muTuned": {
+      "spearman_median": 0.8576923076923076,
+      "spearman_mean": 0.8034658830881874,
+      "n_students": 949,
+      "top1_agreement": 0.6970837253057385,
+      "n_top1": 1063
+    },
+    "fl_FedAvg_rowwise_samecfg": {
+      "spearman_median": 0.972873900293255,
+      "spearman_mean": 0.914598783623545,
+      "n_students": 949,
+      "top1_agreement": 0.8438381937911571,
+      "n_top1": 1063
+    },
+    "fl_FedAvg_rowwise": {
+      "spearman_median": 0.9518796992481202,
+      "spearman_mean": 0.8846054893398271,
+      "n_students": 949,
+      "top1_agreement": 0.7751646284101599,
+      "n_top1": 1063
+    },
+    "fl_LogReg": {
+      "spearman_median": 0.8418972332015812,
+      "spearman_mean": 0.7814800624249925,
+      "n_students": 949,
+      "top1_agreement": 0.6801505174035748,
+      "n_top1": 1063
+    },
+    "FedAvg_features_only": {
+      "spearman_median": 0.8418972332015812,
+      "spearman_mean": 0.7814800624249925,
+      "n_students": 949,
+      "top1_agreement": 0.6801505174035748,
+      "n_top1": 1063
+    },
+    "fl_FedAvg_v1protocol": {
+      "spearman_median": 0.8285714285714287,
+      "spearman_mean": 0.740020530822742,
+      "n_students": 949,
+      "top1_agreement": 0.5597365945437441,
+      "n_top1": 1063
+    }
+  },
+  "bootstrap": {
+    "cost_FedAvg": {
+      "a": "cdnn_tuned",
+      "b": "fl_FedAvg",
+      "global_auc": {
+        "diff": 0.011492881835937774,
+        "ci95": [
+          0.0044441625074310934,
+          0.018752145830220064
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.0016489602384173185,
+        "ci95": [
+          -0.011421169842938344,
+          0.01473715963307432
+        ]
+      }
+    },
+    "cost_FedProx_mu0.1": {
+      "a": "cdnn_tuned",
+      "b": "fl_FedProx_mu0.1",
+      "global_auc": {
+        "diff": 0.010360044907080868,
+        "ci95": [
+          0.003832106681256459,
+          0.016289932409506717
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.004195735003391876,
+        "ci95": [
+          -0.008214133578979599,
+          0.015985050331432563
+        ]
+      }
+    },
+    "cost_FedProx_mu0.5": {
+      "a": "cdnn_tuned",
+      "b": "fl_FedProx_mu0.5",
+      "global_auc": {
+        "diff": 0.011570421858227764,
+        "ci95": [
+          0.004771619522115034,
+          0.01806737617773247
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.003328545142690653,
+        "ci95": [
+          -0.009778880099725457,
+          0.015009322285910884
+        ]
+      }
+    },
+    "cost_FedProx_mu1.0": {
+      "a": "cdnn_tuned",
+      "b": "fl_FedProx_mu1.0",
+      "global_auc": {
+        "diff": 0.013279948885723591,
+        "ci95": [
+          0.0056800101882358905,
+          0.021686420957395425
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.024370602611688774,
+        "ci95": [
+          0.007168117869809543,
+          0.04208610935040723
+        ]
+      }
+    },
+    "cost_FedProx_muTuned": {
+      "a": "cdnn_tuned",
+      "b": "fl_FedProx_muTuned",
+      "global_auc": {
+        "diff": 0.01050837386599579,
+        "ci95": [
+          0.002296314942352326,
+          0.022336370546272195
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.02394927700361149,
+        "ci95": [
+          0.004686778166411778,
+          0.04766235968403799
+        ]
+      }
+    },
+    "cost_rowwise": {
+      "a": "cdnn_tuned",
+      "b": "fl_FedAvg_rowwise",
+      "global_auc": {
+        "diff": 0.02172713309822427,
+        "ci95": [
+          0.01260349198503648,
+          0.032643667771825736
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.02415816202247789,
+        "ci95": [
+          0.004236804699875535,
+          0.04781689105630292
+        ]
+      }
+    },
+    "rowwise_minus_dense": {
+      "a": "fl_FedAvg_rowwise",
+      "b": "fl_FedAvg",
+      "global_auc": {
+        "diff": -0.010234251262286498,
+        "ci95": [
+          -0.021855955983625705,
+          -0.00028835717434421825
+        ]
+      },
+      "per_student_auc": {
+        "diff": -0.022509201784060573,
+        "ci95": [
+          -0.04548455249797357,
+          -0.0029960358706242153
+        ]
+      }
+    },
+    "cost_features_only": {
+      "a": "cdnn_features_only",
+      "b": "FedAvg_features_only",
+      "global_auc": {
+        "diff": 0.00035346925455759237,
+        "ci95": [
+          -0.002567926035686821,
+          0.002630712861361791
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "centralized_gain_from_embeddings": {
+      "a": "cdnn_tuned",
+      "b": "cdnn_features_only",
+      "global_auc": {
+        "diff": 0.009174131132897667,
+        "ci95": [
+          0.0023361599879234197,
+          0.01541087514334911
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.016018270856732908,
+        "ci95": [
+          0.0003157900003970927,
+          0.03141229646211252
+        ]
+      }
+    },
+    "fedavg_loss_from_embeddings": {
+      "a": "FedAvg_features_only",
+      "b": "fl_FedAvg",
+      "global_auc": {
+        "diff": 0.0019652814484825143,
+        "ci95": [
+          -0.00492737034845277,
+          0.009123672278451078
+        ]
+      },
+      "per_student_auc": {
+        "diff": -0.01436931061831559,
+        "ci95": [
+          -0.030088473107145557,
+          0.0028654852649262724
+        ]
+      }
+    },
+    "cost_logreg": {
+      "a": "clr_tuned",
+      "b": "fl_LogReg",
+      "global_auc": {
+        "diff": 0.00028868260360281894,
+        "ci95": [
+          -0.002845780144898605,
+          0.0042374180731987125
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "recommender_minus_logreg_centralized": {
+      "a": "cdnn_tuned",
+      "b": "clr_tuned",
+      "global_auc": {
+        "diff": 0.00884859806099303,
+        "ci95": [
+          0.0019706286464257596,
+          0.015580080402962954
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.016018270856732908,
+        "ci95": [
+          1.656317302091468e-05,
+          0.03234076112462551
+        ]
+      }
+    },
+    "recommender_minus_logreg_federated": {
+      "a": "fl_FedAvg",
+      "b": "fl_LogReg",
+      "global_auc": {
+        "diff": -0.0023556011713419256,
+        "ci95": [
+          -0.010326953887990093,
+          0.005708335605695693
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.01436931061831559,
+        "ci95": [
+          -0.0020742328216282104,
+          0.02986214210832987
+        ]
+      }
+    },
+    "cost_preliminary": {
+      "a": "cdnn_v1",
+      "b": "fl_FedAvg_v1protocol",
+      "global_auc": {
+        "diff": 0.14483385530635817,
+        "ci95": [
+          0.12273888902810527,
+          0.16698991429646004
+        ]
+      },
+      "per_student_auc": {
+        "diff": 0.032891072349976125,
+        "ci95": [
+          0.00402266407956225,
+          0.06861148192283177
+        ]
+      }
+    }
+  },
+  "equivalence_margins": {
+    "FedAvg vs FedProx_mu0.1": 0.0017155758042552013,
+    "FedAvg vs FedProx_mu0.5": 0.0007183574882778725,
+    "FedAvg vs FedProx_mu1.0": 0.0036495198576256887,
+    "FedAvg vs FedProx_muTuned": 0.003483140848136017,
+    "FedProx_mu0.1 vs FedProx_mu0.5": 0.0016255863180549377,
+    "FedProx_mu0.1 vs FedProx_mu1.0": 0.004709413370479035,
+    "FedProx_mu0.1 vs FedProx_muTuned": 0.002399835346004625,
+    "FedProx_mu0.5 vs FedProx_mu1.0": 0.0035012290566411594,
+    "FedProx_mu0.5 vs FedProx_muTuned": 0.003313324219299551,
+    "FedProx_mu1.0 vs FedProx_muTuned": 0.00468928025376607
+  }
+}

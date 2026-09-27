@@ -6,6 +6,13 @@ global weights (plus the proximal term for FedProx) with a freshly created
 optimizer; the server sets the global weights to the sample-size-weighted mean
 of the returned weights. This is the update rule of Flower's FedAvg/FedProx.
 
+With hp["aggregation"] == "rowwise", the two embedding tables are aggregated
+row by row instead: each row is averaged (sample-size weighted) only over the
+sampled clients whose data contain that student or skill, and rows that no
+sampled client used keep their global value. A student row is then set to the
+value returned by that student's own client, which is equivalent to keeping
+the student embedding on the client (federated collaborative filtering).
+
 Randomness is fully determined by (seed, round, client): the client sample of
 each round comes from numpy's default_rng(seed), and every local update seeds
 torch with client_seed(seed, round, client). The Flower cross-check reuses the
@@ -51,21 +58,36 @@ def run_federated(fit, val, test, meta, arch, hp, mu, seed, n_rounds,
     gmodel, local = build(meta, arch), build(meta, arch)
     rng = np.random.default_rng(seed)
     k = n_fit_clients(len(clients))
+    rowwise = hp.get("aggregation", "dense") == "rowwise"
+    emb_rows = {"user_embedding.weight": [torch.unique(c[0]) for c in clients],
+                "skill_embedding.weight": [torch.unique(c[1]) for c in clients]} if rowwise else {}
 
     rows, best, t0 = [], None, time.time()
     for rnd in range(1, n_rounds + 1):
         gstate = {n: t.detach().clone() for n, t in gmodel.state_dict().items()}
         gparams = [p.detach().clone() for p in gmodel.parameters()] if mu > 0 else None
         acc = {n: torch.zeros_like(t) for n, t in gstate.items()}
+        row_w = {n: torch.zeros(gstate[n].shape[0]) for n in emb_rows}
         sel = rng.choice(len(clients), k, replace=False)
         for c in sel:
             torch.manual_seed(client_seed(seed, rnd, int(c)))
             local.load_state_dict(gstate)
             train_epochs(local, clients[c], hp["local_epochs"], hp, mu=mu, global_params=gparams)
             for n, t in local.state_dict().items():
-                acc[n] += sizes[c] * t
+                if n in emb_rows:
+                    r = emb_rows[n][c]
+                    acc[n][r] += sizes[c] * t[r]
+                    row_w[n][r] += sizes[c]
+                else:
+                    acc[n] += sizes[c] * t
         tot = sizes[sel].sum()
-        gmodel.load_state_dict({n: a / tot for n, a in acc.items()})
+        new = {n: a / tot for n, a in acc.items() if n not in emb_rows}
+        for n, w in row_w.items():
+            upd = w > 0
+            row = gstate[n].clone()
+            row[upd] = acc[n][upd] / w[upd].unsqueeze(1)
+            new[n] = row
+        gmodel.load_state_dict(new)
 
         p_val = predict(gmodel, t_val)
         p_test = None

@@ -14,7 +14,7 @@ SHORT = {"FedAvg": "FedAvg", "FedProx_mu0.1": r"$\mu=0.1$", "FedProx_mu0.5": r"$
          "FedProx_mu1.0": r"$\mu=1.0$", "FedProx_muTuned": r"$\mu$ tuned"}
 NAME = {"FedAvg": "FedAvg", "FedProx_mu0.1": r"FedProx $\mu=0.1$", "FedProx_mu0.5": r"FedProx $\mu=0.5$",
         "FedProx_mu1.0": r"FedProx $\mu=1.0$", "FedProx_muTuned": r"FedProx, $\mu$ tuned",
-        "FedAvg_v1protocol": "FedAvg, preliminary protocol"}
+        "FedAvg_v1protocol": "FedAvg, preliminary config."}
 
 
 def pm(x, d=3):
@@ -100,6 +100,20 @@ for s in TUNED:
     extra = f"; $\\mu$={p['mu']:.3f}" if "mu" in p else ""
     rows.append([NAME[s], r"\SetCell[c=2]{l}" + f"{opt}, lr {lr:.4f}, $E$={p['local_epochs']}, "
                  f"$B$={p['batch_size']}, weight decay {sci(p['weight_decay'])}{extra}", ""])
+EXTRA_STUDIES = [("federated_FedAvg_rowwise", "FedAvg, row-wise aggregation"),
+                 ("federated_LogReg", "Logistic regression, FedAvg"),
+                 ("centralized_logreg", "Logistic regression, centralized")]
+if all(os.path.exists(os.path.join(OUT_DIR, "tuning", f"{n}_best.json")) for n, _ in EXTRA_STUDIES):
+    rows.append([r"\SetCell[c=3]{l}\textit{Added conditions} (same search space; 100 trials for centralized logistic "
+                 r"regression)", "", ""])
+    for n, lab in EXTRA_STUDIES:
+        p = read(os.path.join(OUT_DIR, "tuning", f"{n}_best.json"))["best_params"]
+        opt = "Adam" if p["optimizer"] == "adam" else "SGD"
+        parts = [f"{opt}, lr {p.get('lr_adam', p.get('lr_sgd')):.4f}"]
+        if "local_epochs" in p:
+            parts.append(f"$E$={p['local_epochs']}")
+        parts += [f"$B$={p['batch_size']}", f"weight decay {sci(p['weight_decay'])}"]
+        rows.append([lab, r"\SetCell[c=2]{l}" + ", ".join(parts), ""])
 table("tab:search", "Optuna search spaces (TPE sampler, validation AUC objective) and selected configurations. "
       "Federated space: local optimizer \\{SGD, Adam\\} with the learning-rate ranges of the centralized search "
       "(Adam up to $10^{-1}$), local epochs $E\\in\\{1,2,5,10\\}$, batch size $B\\in\\{16,32,64\\}$, weight decay "

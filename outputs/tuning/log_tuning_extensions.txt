@@ -1,0 +1,4 @@
+[I 2026-09-27 09:02:32,064] A new study created in Journal with name: federated_FedAvg_rowwise
+[federated_FedAvg_rowwise] best val AUC 0.7938 | {'optimizer': 'sgd', 'lr_sgd': 0.3042643626496225, 'local_epochs': 5, 'batch_size': 16, 'weight_decay': 0.0018210736647671223}
+[I 2026-09-27 09:32:49,845] A new study created in Journal with name: federated_LogReg
+[federated_LogReg] best val AUC 0.7771 | {'optimizer': 'sgd', 'lr_sgd': 0.09145739346401471, 'local_epochs': 5, 'batch_size': 16, 'weight_decay': 2.0324942910104125e-07}

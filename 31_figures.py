@@ -24,7 +24,7 @@ STYLES = ["-", "--", "-.", ":", (0, (5, 1, 1, 1))]
 TUNED = list(FL_STRATEGIES)
 LABEL = {"FedAvg": "FedAvg", "FedProx_mu0.1": r"FedProx $\mu$=0.1", "FedProx_mu0.5": r"FedProx $\mu$=0.5",
          "FedProx_mu1.0": r"FedProx $\mu$=1.0", "FedProx_muTuned": r"FedProx $\mu$ tuned",
-         "FedAvg_v1protocol": "FedAvg, preliminary protocol"}
+         "FedAvg_v1protocol": "FedAvg, preliminary configuration"}
 COLOR = {**dict(zip(TUNED, PALETTE)), "FedAvg_v1protocol": MUTED}
 STYLE = {**dict(zip(TUNED, STYLES)), "FedAvg_v1protocol": (0, (2, 2))}
 
@@ -77,7 +77,7 @@ def trace(ax, cond, colname):
 
 
 fig, axes = plt.subplots(2, 2, figsize=(7.2, 4.8), sharex=True)
-panels = [(axes[0, 0], STABLE, "test_roc_auc", "(a) Test ROC AUC, local SGD and preliminary protocol"),
+panels = [(axes[0, 0], STABLE, "test_roc_auc", "(a) Test ROC AUC, local SGD and preliminary configuration"),
           (axes[0, 1], ["FedAvg"] + UNSTABLE, "test_roc_auc", f"(b) Test ROC AUC, single run (seed {TRACE_SEED})"),
           (axes[1, 0], STABLE + UNSTABLE, "test_balanced_accuracy", "(c) Test balanced accuracy, threshold 0.5"),
           (axes[1, 1], STABLE + UNSTABLE, "test_positive_rate", "(d) Share of test pairs predicted positive")]
@@ -114,7 +114,7 @@ save(fig, "fig_convergence")
 # Figure: forest plot of test performance ------------------------------------------------------------
 order = [("xgboost", "XGBoost (centralized)"), ("cdnn_tuned", "DNN (centralized)"),
          *[(f"fl_{s}", LABEL[s]) for s in TUNED],
-         ("cdnn_v1", "DNN (centralized), preliminary config."), ("fl_FedAvg_v1protocol", LABEL["FedAvg_v1protocol"])]
+         ("cdnn_v1", "DNN (centralized), preliminary configuration"), ("fl_FedAvg_v1protocol", LABEL["FedAvg_v1protocol"])]
 runs = {k: read(os.path.join(EVAL_DIR, f"{k}.json"))["runs"] for k, _ in order}
 fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.7), sharey=True)
 for ax, (view, metric, title, ref) in zip(axes, [

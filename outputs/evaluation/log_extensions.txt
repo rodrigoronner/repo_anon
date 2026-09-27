@@ -1,0 +1,40 @@
+fl_FedAvg_rowwise          seed 45 sel  758 | AUC 0.7629 BalAcc 0.6778 | user rows moved 4.384
+fl_FedAvg_rowwise          seed 42 sel  729 | AUC 0.7681 BalAcc 0.6846 | user rows moved 4.477
+fl_FedAvg_rowwise          seed 48 sel  608 | AUC 0.7586 BalAcc 0.6879 | user rows moved 4.476
+fl_FedAvg_rowwise          seed 44 sel  624 | AUC 0.7669 BalAcc 0.6919 | user rows moved 4.439
+fl_FedAvg_rowwise          seed 46 sel  688 | AUC 0.7694 BalAcc 0.6808 | user rows moved 4.393
+fl_FedAvg_rowwise          seed 43 sel  834 | AUC 0.7719 BalAcc 0.6862 | user rows moved 4.385
+fl_FedAvg_rowwise          seed 47 sel  851 | AUC 0.7684 BalAcc 0.6827 | user rows moved 4.360
+fl_FedAvg_rowwise          seed 50 sel  901 | AUC 0.7635 BalAcc 0.6804 | user rows moved 4.475
+fl_FedAvg_rowwise          seed 49 sel  571 | AUC 0.7696 BalAcc 0.6896 | user rows moved 4.337
+fl_FedAvg_rowwise_samecfg  seed 42 sel  962 | AUC 0.7755 BalAcc 0.6952 | user rows moved 1.806
+fl_FedAvg_rowwise_samecfg  seed 43 sel  974 | AUC 0.7763 BalAcc 0.6979 | user rows moved 1.773
+fl_FedAvg_rowwise_samecfg  seed 45 sel  929 | AUC 0.7788 BalAcc 0.6964 | user rows moved 1.791
+fl_FedAvg_rowwise_samecfg  seed 44 sel  948 | AUC 0.7752 BalAcc 0.6936 | user rows moved 1.799
+fl_FedAvg_rowwise_samecfg  seed 46 sel  928 | AUC 0.7762 BalAcc 0.6935 | user rows moved 1.807
+fl_FedAvg_rowwise_samecfg  seed 47 sel  997 | AUC 0.7788 BalAcc 0.6966 | user rows moved 1.787
+fl_FedAvg_rowwise_samecfg  seed 48 sel  996 | AUC 0.7773 BalAcc 0.7000 | user rows moved 1.770
+fl_FedAvg_rowwise_samecfg  seed 49 sel  794 | AUC 0.7776 BalAcc 0.6957 | user rows moved 1.777
+fl_LogReg                  seed 43 sel  966 | AUC 0.7799 BalAcc 0.6319
+fl_LogReg                  seed 42 sel  990 | AUC 0.7798 BalAcc 0.6303
+fl_LogReg                  seed 44 sel  963 | AUC 0.7799 BalAcc 0.6375
+fl_LogReg                  seed 45 sel  985 | AUC 0.7796 BalAcc 0.6249
+fl_LogReg                  seed 46 sel   77 | AUC 0.7789 BalAcc 0.5025
+clr_tuned                  seed 42 sel    3 | AUC 0.7789 BalAcc 0.6956
+clr_tuned                  seed 43 sel    4 | AUC 0.7802 BalAcc 0.6446
+clr_tuned                  seed 44 sel    4 | AUC 0.7795 BalAcc 0.6970
+clr_tuned                  seed 45 sel    4 | AUC 0.7808 BalAcc 0.5090
+clr_tuned                  seed 46 sel    3 | AUC 0.7804 BalAcc 0.5031
+clr_tuned                  seed 47 sel    2 | AUC 0.7775 BalAcc 0.6847
+fl_LogReg                  seed 47 sel  998 | AUC 0.7798 BalAcc 0.6248
+clr_tuned                  seed 48 sel    3 | AUC 0.7777 BalAcc 0.6090
+clr_tuned                  seed 49 sel    4 | AUC 0.7798 BalAcc 0.6733
+clr_tuned                  seed 50 sel    7 | AUC 0.7810 BalAcc 0.6988
+clr_tuned                  seed 51 sel    6 | AUC 0.7807 BalAcc 0.7009
+fl_FedAvg_rowwise_samecfg  seed 50 sel  792 | AUC 0.7766 BalAcc 0.6961 | user rows moved 1.795
+fl_FedAvg_rowwise_samecfg  seed 51 sel  939 | AUC 0.7779 BalAcc 0.7014 | user rows moved 1.777
+fl_LogReg                  seed 48 sel  993 | AUC 0.7793 BalAcc 0.6278
+fl_LogReg                  seed 49 sel  990 | AUC 0.7800 BalAcc 0.6323
+fl_FedAvg_rowwise          seed 51 sel  551 | AUC 0.7682 BalAcc 0.6871 | user rows moved 4.489
+fl_LogReg                  seed 50 sel   68 | AUC 0.7765 BalAcc 0.5006
+fl_LogReg                  seed 51 sel  901 | AUC 0.7799 BalAcc 0.6321

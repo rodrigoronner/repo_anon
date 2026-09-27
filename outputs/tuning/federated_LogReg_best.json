@@ -1,0 +1,25 @@
+{
+  "study": "federated_LogReg",
+  "best_value": 0.7771387665465488,
+  "best_params": {
+    "optimizer": "sgd",
+    "lr_sgd": 0.09145739346401471,
+    "local_epochs": 5,
+    "batch_size": 16,
+    "weight_decay": 2.0324942910104125e-07
+  },
+  "best_user_attrs": {
+    "best_round": 950
+  },
+  "best_trial": 25,
+  "n_trials": 38,
+  "n_complete": 29,
+  "n_pruned": 9,
+  "n_failed": 0,
+  "param_importances": {
+    "optimizer": 0.6640129110382452,
+    "batch_size": 0.1821406122621962,
+    "weight_decay": 0.0799292029212223,
+    "local_epochs": 0.07391727377833616
+  }
+}
