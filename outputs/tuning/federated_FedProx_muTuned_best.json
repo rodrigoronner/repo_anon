@@ -1,0 +1,27 @@
+{
+  "study": "federated_FedProx_muTuned",
+  "best_value": 0.7790630801150219,
+  "best_params": {
+    "optimizer": "adam",
+    "lr_adam": 0.07129439007411074,
+    "local_epochs": 1,
+    "batch_size": 16,
+    "weight_decay": 0.08998522793041448,
+    "mu": 0.017313728464657275
+  },
+  "best_user_attrs": {
+    "best_round": 460
+  },
+  "best_trial": 19,
+  "n_trials": 38,
+  "n_complete": 22,
+  "n_pruned": 16,
+  "n_failed": 0,
+  "param_importances": {
+    "mu": 0.36221705370801216,
+    "weight_decay": 0.3348017852460561,
+    "local_epochs": 0.1765056173966979,
+    "optimizer": 0.06670681214495124,
+    "batch_size": 0.05976873150428262
+  }
+}

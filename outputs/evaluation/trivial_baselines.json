@@ -1,0 +1,45 @@
+{
+  "test_positive_rate": 0.6434464751958224,
+  "fit_positive_rate": 0.6626860603316543,
+  "n_test": 9575,
+  "always_positive": {
+    "threshold": 0.5,
+    "roc_auc": 0.5,
+    "balanced_accuracy": 0.5,
+    "f1_score": 0.7830452465683783,
+    "precision": 0.6434464751958224,
+    "recall": 1.0,
+    "accuracy": 0.6434464751958224,
+    "positive_rate": 1.0
+  },
+  "stratified_random": {
+    "threshold": 0.5,
+    "roc_auc": 0.50307459654894,
+    "balanced_accuracy": 0.50307459654894,
+    "f1_score": 0.658340625248588,
+    "precision": 0.6455538221528861,
+    "recall": 0.671644213601688,
+    "accuracy": 0.5514360313315927,
+    "positive_rate": 0.6694516971279373
+  },
+  "student_history_mean": {
+    "threshold": 0.6666666666666666,
+    "roc_auc": 0.689403467414649,
+    "balanced_accuracy": 0.6391324113252029,
+    "f1_score": 0.739240506329114,
+    "precision": 0.7439184746877054,
+    "recall": 0.734621003083915,
+    "accuracy": 0.6665274151436031,
+    "positive_rate": 0.6354046997389033
+  },
+  "skill_history_mean": {
+    "threshold": 0.6489817792068596,
+    "roc_auc": 0.6993943848272868,
+    "balanced_accuracy": 0.6342522321608979,
+    "f1_score": 0.7140310669722434,
+    "precision": 0.7483985765124556,
+    "recall": 0.6826813828923876,
+    "accuracy": 0.6481462140992167,
+    "positive_rate": 0.5869451697127938
+  }
+}

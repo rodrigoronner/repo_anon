@@ -1,0 +1,15 @@
+{
+  "strategy": "FedAvg",
+  "tuned_config": null,
+  "results": [
+    {
+      "seed": 42,
+      "rounds": 100,
+      "max_abs_diff_test_auc": 6.919862806531452e-05,
+      "mean_abs_diff_test_auc": 1.524699417419062e-05,
+      "max_abs_diff_val_auc": 0.00012982443368625418,
+      "final_test_auc_flower": 0.6823466098662647,
+      "final_test_auc_sim": 0.6823671959232571
+    }
+  ]
+}

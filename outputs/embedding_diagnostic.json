@@ -1,0 +1,686 @@
+{
+  "runs": [
+    {
+      "condition": "cdnn_tuned",
+      "seed": 42,
+      "user_embedding": {
+        "norm_init": 5.642284870147705,
+        "norm_final": 0.09861013293266296,
+        "moved": 5.642707347869873
+      },
+      "skill_embedding": {
+        "norm_init": 5.670613765716553,
+        "norm_final": 0.18649448454380035,
+        "moved": 5.665977478027344
+      }
+    },
+    {
+      "condition": "cdnn_tuned",
+      "seed": 43,
+      "user_embedding": {
+        "norm_init": 5.605860710144043,
+        "norm_final": 0.10755958408117294,
+        "moved": 5.6074652671813965
+      },
+      "skill_embedding": {
+        "norm_init": 5.510039329528809,
+        "norm_final": 0.17701366543769836,
+        "moved": 5.509861469268799
+      }
+    },
+    {
+      "condition": "cdnn_tuned",
+      "seed": 44,
+      "user_embedding": {
+        "norm_init": 5.605859756469727,
+        "norm_final": 0.06137160584330559,
+        "moved": 5.605255126953125
+      },
+      "skill_embedding": {
+        "norm_init": 5.525732517242432,
+        "norm_final": 0.14939455687999725,
+        "moved": 5.52040958404541
+      }
+    },
+    {
+      "condition": "cdnn_tuned",
+      "seed": 45,
+      "user_embedding": {
+        "norm_init": 5.623356342315674,
+        "norm_final": 0.08927569538354874,
+        "moved": 5.623509407043457
+      },
+      "skill_embedding": {
+        "norm_init": 5.538704872131348,
+        "norm_final": 0.16837413609027863,
+        "moved": 5.5381550788879395
+      }
+    },
+    {
+      "condition": "cdnn_tuned",
+      "seed": 46,
+      "user_embedding": {
+        "norm_init": 5.639209270477295,
+        "norm_final": 0.08558915555477142,
+        "moved": 5.639530658721924
+      },
+      "skill_embedding": {
+        "norm_init": 5.664244651794434,
+        "norm_final": 0.17654849588871002,
+        "moved": 5.666511058807373
+      }
+    },
+    {
+      "condition": "cdnn_tuned",
+      "seed": 47,
+      "user_embedding": {
+        "norm_init": 5.601154327392578,
+        "norm_final": 0.08664155006408691,
+        "moved": 5.601056098937988
+      },
+      "skill_embedding": {
+        "norm_init": 5.634354114532471,
+        "norm_final": 0.1746307909488678,
+        "moved": 5.634777069091797
+      }
+    },
+    {
+      "condition": "cdnn_tuned",
+      "seed": 48,
+      "user_embedding": {
+        "norm_init": 5.586228370666504,
+        "norm_final": 0.08790363371372223,
+        "moved": 5.5869879722595215
+      },
+      "skill_embedding": {
+        "norm_init": 5.753355026245117,
+        "norm_final": 0.1937894970178604,
+        "moved": 5.748701572418213
+      }
+    },
+    {
+      "condition": "cdnn_tuned",
+      "seed": 49,
+      "user_embedding": {
+        "norm_init": 5.600285530090332,
+        "norm_final": 0.08953864127397537,
+        "moved": 5.600833892822266
+      },
+      "skill_embedding": {
+        "norm_init": 5.652527809143066,
+        "norm_final": 0.17436692118644714,
+        "moved": 5.650920391082764
+      }
+    },
+    {
+      "condition": "cdnn_tuned",
+      "seed": 50,
+      "user_embedding": {
+        "norm_init": 5.568272113800049,
+        "norm_final": 0.07659485936164856,
+        "moved": 5.568892955780029
+      },
+      "skill_embedding": {
+        "norm_init": 5.602152347564697,
+        "norm_final": 0.17997832596302032,
+        "moved": 5.601350784301758
+      }
+    },
+    {
+      "condition": "cdnn_tuned",
+      "seed": 51,
+      "user_embedding": {
+        "norm_init": 5.637465476989746,
+        "norm_final": 0.08581890910863876,
+        "moved": 5.638477802276611
+      },
+      "skill_embedding": {
+        "norm_init": 5.625974178314209,
+        "norm_final": 0.18249870836734772,
+        "moved": 5.624020576477051
+      }
+    },
+    {
+      "condition": "cdnn_noEmbDecay",
+      "seed": 42,
+      "user_embedding": {
+        "norm_init": 5.642284870147705,
+        "norm_final": 6.455076217651367,
+        "moved": 3.3831727504730225
+      },
+      "skill_embedding": {
+        "norm_init": 5.670613765716553,
+        "norm_final": 5.923269271850586,
+        "moved": 3.295424222946167
+      }
+    },
+    {
+      "condition": "cdnn_noEmbDecay",
+      "seed": 43,
+      "user_embedding": {
+        "norm_init": 5.605860710144043,
+        "norm_final": 6.001097679138184,
+        "moved": 2.283998489379883
+      },
+      "skill_embedding": {
+        "norm_init": 5.510039329528809,
+        "norm_final": 5.6497015953063965,
+        "moved": 2.3625330924987793
+      }
+    },
+    {
+      "condition": "cdnn_noEmbDecay",
+      "seed": 44,
+      "user_embedding": {
+        "norm_init": 5.605859756469727,
+        "norm_final": 6.086508274078369,
+        "moved": 2.6230688095092773
+      },
+      "skill_embedding": {
+        "norm_init": 5.525732517242432,
+        "norm_final": 5.710151195526123,
+        "moved": 2.4749104976654053
+      }
+    },
+    {
+      "condition": "cdnn_noEmbDecay",
+      "seed": 45,
+      "user_embedding": {
+        "norm_init": 5.623356342315674,
+        "norm_final": 6.061301231384277,
+        "moved": 2.469240188598633
+      },
+      "skill_embedding": {
+        "norm_init": 5.538704872131348,
+        "norm_final": 5.710812091827393,
+        "moved": 2.454566240310669
+      }
+    },
+    {
+      "condition": "cdnn_noEmbDecay",
+      "seed": 46,
+      "user_embedding": {
+        "norm_init": 5.639209270477295,
+        "norm_final": 6.021656036376953,
+        "moved": 2.330155611038208
+      },
+      "skill_embedding": {
+        "norm_init": 5.664244651794434,
+        "norm_final": 5.817103385925293,
+        "moved": 2.305178642272949
+      }
+    },
+    {
+      "condition": "cdnn_noEmbDecay",
+      "seed": 47,
+      "user_embedding": {
+        "norm_init": 5.601154327392578,
+        "norm_final": 5.998833179473877,
+        "moved": 2.299631357192993
+      },
+      "skill_embedding": {
+        "norm_init": 5.634354114532471,
+        "norm_final": 5.79361629486084,
+        "moved": 2.178748607635498
+      }
+    },
+    {
+      "condition": "cdnn_noEmbDecay",
+      "seed": 48,
+      "user_embedding": {
+        "norm_init": 5.586228370666504,
+        "norm_final": 6.379891395568848,
+        "moved": 3.2706472873687744
+      },
+      "skill_embedding": {
+        "norm_init": 5.753355026245117,
+        "norm_final": 5.881715297698975,
+        "moved": 3.2411019802093506
+      }
+    },
+    {
+      "condition": "cdnn_noEmbDecay",
+      "seed": 49,
+      "user_embedding": {
+        "norm_init": 5.600285530090332,
+        "norm_final": 5.9736151695251465,
+        "moved": 2.267603874206543
+      },
+      "skill_embedding": {
+        "norm_init": 5.652527809143066,
+        "norm_final": 5.817400932312012,
+        "moved": 2.3875792026519775
+      }
+    },
+    {
+      "condition": "cdnn_noEmbDecay",
+      "seed": 50,
+      "user_embedding": {
+        "norm_init": 5.568272113800049,
+        "norm_final": 6.035764217376709,
+        "moved": 2.5667130947113037
+      },
+      "skill_embedding": {
+        "norm_init": 5.602152347564697,
+        "norm_final": 5.819624900817871,
+        "moved": 2.5550522804260254
+      }
+    },
+    {
+      "condition": "cdnn_noEmbDecay",
+      "seed": 51,
+      "user_embedding": {
+        "norm_init": 5.637465476989746,
+        "norm_final": 5.894449710845947,
+        "moved": 1.9851263761520386
+      },
+      "skill_embedding": {
+        "norm_init": 5.625974178314209,
+        "norm_final": 5.747016429901123,
+        "moved": 2.0762579441070557
+      }
+    },
+    {
+      "condition": "FedAvg",
+      "seed": 42,
+      "user_embedding": {
+        "norm_init": 5.642284870147705,
+        "norm_final": 0.764838457107544,
+        "moved": 4.877544403076172
+      },
+      "skill_embedding": {
+        "norm_init": 5.670613765716553,
+        "norm_final": 0.80673748254776,
+        "moved": 4.875129222869873
+      }
+    },
+    {
+      "condition": "FedAvg",
+      "seed": 43,
+      "user_embedding": {
+        "norm_init": 5.605860710144043,
+        "norm_final": 0.7651361227035522,
+        "moved": 4.840795040130615
+      },
+      "skill_embedding": {
+        "norm_init": 5.510039329528809,
+        "norm_final": 0.798316240310669,
+        "moved": 4.724742889404297
+      }
+    },
+    {
+      "condition": "FedAvg",
+      "seed": 44,
+      "user_embedding": {
+        "norm_init": 5.605859756469727,
+        "norm_final": 0.7630026340484619,
+        "moved": 4.842929363250732
+      },
+      "skill_embedding": {
+        "norm_init": 5.525732517242432,
+        "norm_final": 0.7965505123138428,
+        "moved": 4.742417335510254
+      }
+    },
+    {
+      "condition": "FedAvg",
+      "seed": 45,
+      "user_embedding": {
+        "norm_init": 5.623356342315674,
+        "norm_final": 0.7670684456825256,
+        "moved": 4.856366157531738
+      },
+      "skill_embedding": {
+        "norm_init": 5.538704872131348,
+        "norm_final": 0.7956981062889099,
+        "moved": 4.756444454193115
+      }
+    },
+    {
+      "condition": "FedAvg",
+      "seed": 46,
+      "user_embedding": {
+        "norm_init": 5.639209270477295,
+        "norm_final": 0.7676137089729309,
+        "moved": 4.871673583984375
+      },
+      "skill_embedding": {
+        "norm_init": 5.664244651794434,
+        "norm_final": 0.8126559853553772,
+        "moved": 4.8638691902160645
+      }
+    },
+    {
+      "condition": "FedAvg",
+      "seed": 47,
+      "user_embedding": {
+        "norm_init": 5.601154327392578,
+        "norm_final": 0.7551020979881287,
+        "moved": 4.8461408615112305
+      },
+      "skill_embedding": {
+        "norm_init": 5.634354114532471,
+        "norm_final": 0.8000943660736084,
+        "moved": 4.846094608306885
+      }
+    },
+    {
+      "condition": "FedAvg",
+      "seed": 48,
+      "user_embedding": {
+        "norm_init": 5.586228370666504,
+        "norm_final": 0.7583872079849243,
+        "moved": 4.8279314041137695
+      },
+      "skill_embedding": {
+        "norm_init": 5.753355026245117,
+        "norm_final": 0.8241978287696838,
+        "moved": 4.941610813140869
+      }
+    },
+    {
+      "condition": "FedAvg",
+      "seed": 49,
+      "user_embedding": {
+        "norm_init": 5.600285530090332,
+        "norm_final": 0.7604694962501526,
+        "moved": 4.839903831481934
+      },
+      "skill_embedding": {
+        "norm_init": 5.652527809143066,
+        "norm_final": 0.810025691986084,
+        "moved": 4.85590934753418
+      }
+    },
+    {
+      "condition": "FedAvg",
+      "seed": 50,
+      "user_embedding": {
+        "norm_init": 5.568272113800049,
+        "norm_final": 0.7615589499473572,
+        "moved": 4.806792736053467
+      },
+      "skill_embedding": {
+        "norm_init": 5.602152347564697,
+        "norm_final": 0.8100965619087219,
+        "moved": 4.804525852203369
+      }
+    },
+    {
+      "condition": "FedAvg",
+      "seed": 51,
+      "user_embedding": {
+        "norm_init": 5.637465476989746,
+        "norm_final": 0.7656664252281189,
+        "moved": 4.871880531311035
+      },
+      "skill_embedding": {
+        "norm_init": 5.625974178314209,
+        "norm_final": 0.8096433877944946,
+        "moved": 4.829151630401611
+      }
+    },
+    {
+      "condition": "FedAvg_noEmbDecay",
+      "seed": 42,
+      "user_embedding": {
+        "norm_init": 5.642284870147705,
+        "norm_final": 5.639188289642334,
+        "moved": 0.010188628919422626
+      },
+      "skill_embedding": {
+        "norm_init": 5.670613765716553,
+        "norm_final": 5.705809116363525,
+        "moved": 0.13137170672416687
+      }
+    },
+    {
+      "condition": "FedAvg_noEmbDecay",
+      "seed": 43,
+      "user_embedding": {
+        "norm_init": 5.605860710144043,
+        "norm_final": 5.602569580078125,
+        "moved": 0.009245720691978931
+      },
+      "skill_embedding": {
+        "norm_init": 5.510039329528809,
+        "norm_final": 5.547760963439941,
+        "moved": 0.11300059407949448
+      }
+    },
+    {
+      "condition": "FedAvg_noEmbDecay",
+      "seed": 44,
+      "user_embedding": {
+        "norm_init": 5.605859756469727,
+        "norm_final": 5.602738380432129,
+        "moved": 0.008637119084596634
+      },
+      "skill_embedding": {
+        "norm_init": 5.525732517242432,
+        "norm_final": 5.56266450881958,
+        "moved": 0.11296035349369049
+      }
+    },
+    {
+      "condition": "FedAvg_noEmbDecay",
+      "seed": 45,
+      "user_embedding": {
+        "norm_init": 5.623356342315674,
+        "norm_final": 5.62035608291626,
+        "moved": 0.009385492652654648
+      },
+      "skill_embedding": {
+        "norm_init": 5.538704872131348,
+        "norm_final": 5.575079917907715,
+        "moved": 0.12206702679395676
+      }
+    },
+    {
+      "condition": "FedAvg_noEmbDecay",
+      "seed": 46,
+      "user_embedding": {
+        "norm_init": 5.639209270477295,
+        "norm_final": 5.636096954345703,
+        "moved": 0.009312163107097149
+      },
+      "skill_embedding": {
+        "norm_init": 5.664244651794434,
+        "norm_final": 5.699981212615967,
+        "moved": 0.11267126351594925
+      }
+    },
+    {
+      "condition": "FedAvg_noEmbDecay",
+      "seed": 47,
+      "user_embedding": {
+        "norm_init": 5.601154327392578,
+        "norm_final": 5.598056793212891,
+        "moved": 0.009851854294538498
+      },
+      "skill_embedding": {
+        "norm_init": 5.634354114532471,
+        "norm_final": 5.669535160064697,
+        "moved": 0.11788111180067062
+      }
+    },
+    {
+      "condition": "FedAvg_noEmbDecay",
+      "seed": 48,
+      "user_embedding": {
+        "norm_init": 5.586228370666504,
+        "norm_final": 5.583098411560059,
+        "moved": 0.009499615989625454
+      },
+      "skill_embedding": {
+        "norm_init": 5.753355026245117,
+        "norm_final": 5.7882795333862305,
+        "moved": 0.11009584367275238
+      }
+    },
+    {
+      "condition": "FedAvg_noEmbDecay",
+      "seed": 49,
+      "user_embedding": {
+        "norm_init": 5.600285530090332,
+        "norm_final": 5.597112655639648,
+        "moved": 0.009844353422522545
+      },
+      "skill_embedding": {
+        "norm_init": 5.652527809143066,
+        "norm_final": 5.689152717590332,
+        "moved": 0.12077218294143677
+      }
+    },
+    {
+      "condition": "FedAvg_noEmbDecay",
+      "seed": 50,
+      "user_embedding": {
+        "norm_init": 5.568272113800049,
+        "norm_final": 5.565051078796387,
+        "moved": 0.009383822791278362
+      },
+      "skill_embedding": {
+        "norm_init": 5.602152347564697,
+        "norm_final": 5.638827323913574,
+        "moved": 0.11611119657754898
+      }
+    },
+    {
+      "condition": "FedAvg_noEmbDecay",
+      "seed": 51,
+      "user_embedding": {
+        "norm_init": 5.637465476989746,
+        "norm_final": 5.634286403656006,
+        "moved": 0.009713002480566502
+      },
+      "skill_embedding": {
+        "norm_init": 5.625974178314209,
+        "norm_final": 5.662163734436035,
+        "moved": 0.11051604896783829
+      }
+    }
+  ],
+  "summary": {
+    "cdnn_tuned": {
+      "user_embedding": {
+        "norm_init": [
+          5.610997676849365,
+          0.024339004069897616
+        ],
+        "norm_final": [
+          0.08689037673175334,
+          0.01219474858487288
+        ],
+        "moved": [
+          5.611471652984619,
+          0.024326378385650126
+        ]
+      },
+      "skill_embedding": {
+        "norm_init": [
+          5.617769861221314,
+          0.07561459586781578
+        ],
+        "norm_final": [
+          0.1763089582324028,
+          0.011811386197622556
+        ],
+        "moved": [
+          5.616068506240845,
+          0.07525694064615722
+        ]
+      }
+    },
+    "cdnn_noEmbDecay": {
+      "user_embedding": {
+        "norm_init": [
+          5.610997676849365,
+          0.024339004069897616
+        ],
+        "norm_final": [
+          6.090819311141968,
+          0.1806652946856893
+        ],
+        "moved": [
+          2.5479357838630676,
+          0.44798435733220565
+        ]
+      },
+      "skill_embedding": {
+        "norm_init": [
+          5.617769861221314,
+          0.07561459586781578
+        ],
+        "norm_final": [
+          5.787041139602661,
+          0.08342578145003134
+        ],
+        "moved": [
+          2.533135271072388,
+          0.4121660366143958
+        ]
+      }
+    },
+    "FedAvg": {
+      "user_embedding": {
+        "norm_init": [
+          5.610997676849365,
+          0.024339004069897616
+        ],
+        "norm_final": [
+          0.7628843545913696,
+          0.004012374998747185
+        ],
+        "moved": [
+          4.848195791244507,
+          0.02191045829527638
+        ]
+      },
+      "skill_embedding": {
+        "norm_init": [
+          5.617769861221314,
+          0.07561459586781578
+        ],
+        "norm_final": [
+          0.8064016163349151,
+          0.00888190941274909
+        ],
+        "moved": [
+          4.823989534378052,
+          0.0675110434216652
+        ]
+      }
+    },
+    "FedAvg_noEmbDecay": {
+      "user_embedding": {
+        "norm_init": [
+          5.610997676849365,
+          0.024339004069897616
+        ],
+        "norm_final": [
+          5.6078554630279545,
+          0.024369520617131393
+        ],
+        "moved": [
+          0.009506177343428134,
+          0.00042592283296121315
+        ]
+      },
+      "skill_embedding": {
+        "norm_init": [
+          5.617769861221314,
+          0.07561459586781578
+        ],
+        "norm_final": [
+          5.65392541885376,
+          0.07487811542216254
+        ],
+        "moved": [
+          0.1167447328567505,
+          0.0065669690451906435
+        ]
+      }
+    }
+  }
+}

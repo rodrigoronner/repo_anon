@@ -1,0 +1,31 @@
+\begin{table*}[ht]
+\centering
+\caption{Optuna search spaces (TPE sampler, validation AUC objective) and selected configurations. Federated space: local optimizer \{SGD, Adam\} with the learning-rate ranges of the centralized search (Adam up to $10^{-1}$), local epochs $E\in\{1,2,5,10\}$, batch size $B\in\{16,32,64\}$, weight decay $10^{-7}$--$10^{-1}$, and $\mu\in[10^{-3},1]$ (log) for the tuned-$\mu$ condition. Data: own experiments.}
+\label{tab:search}
+\begin{tblr}{
+    colspec = {p{0.30\textwidth} p{0.34\textwidth} X},
+    cells   = {font=\small},
+    row{1}  = {font=\small\bfseries},
+    }
+\toprule
+Hyperparameter & Search space & Selected \\
+\midrule
+\SetCell[c=3]{l}\textit{XGBoost} (108 trials) &  &  \\
+ID encoding & numeric, categorical, none & numeric \\
+Max. depth; learning rate & 2--10; $10^{-2}$--0.3 (log) & 6; 0.060 \\
+Min. child weight; subsample; col. sample & 1--50 (log); 0.5--1; 0.5--1 & 3.49; 0.68; 0.58 \\
+$\lambda$; $\alpha$; $\gamma$ & $10^{-3}$--10 (log); $10^{-3}$--10 (log); 0--5 & 0.026; 0.067; 1.07 \\
+\SetCell[c=3]{l}\textit{RecommenderNet, centralized} (108 trials) &  &  \\
+Embedding; hidden 1; hidden 2 & \{2,4,8,16,32\}; \{16,\ldots,256\}; \{8,\ldots,128\} & 32; 128; 128 \\
+Dropout; weight decay & 0--0.7; $10^{-7}$--$10^{-1}$ (log) & 0.4; $3.1\times10^{-3}$ \\
+Optimizer; learning rate & Adam $10^{-4}$--$3\cdot10^{-2}$, SGD $10^{-2}$--2 (log) & Adam; 0.0055 \\
+Batch size & \{32,64,128,256\} & 64 \\
+\SetCell[c=3]{l}\textit{Federated training} (38 trials per strategy; architecture frozen from the centralized search) &  &  \\
+FedAvg & \SetCell[c=2]{l}SGD, lr 0.2171, $E$=2, $B$=32, weight decay $3.1\times10^{-3}$ &  \\
+FedProx $\mu=0.1$ & \SetCell[c=2]{l}SGD, lr 0.1459, $E$=1, $B$=16, weight decay $8.7\times10^{-3}$ &  \\
+FedProx $\mu=0.5$ & \SetCell[c=2]{l}SGD, lr 0.3609, $E$=1, $B$=16, weight decay $3.1\times10^{-3}$ &  \\
+FedProx $\mu=1.0$ & \SetCell[c=2]{l}Adam, lr 0.0137, $E$=10, $B$=16, weight decay $7.9\times10^{-2}$ &  \\
+FedProx, $\mu$ tuned & \SetCell[c=2]{l}Adam, lr 0.0713, $E$=1, $B$=16, weight decay $9.0\times10^{-2}$; $\mu$=0.017 &  \\
+\bottomrule
+\end{tblr}
+\end{table*}

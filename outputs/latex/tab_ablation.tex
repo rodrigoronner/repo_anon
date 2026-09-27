@@ -1,0 +1,28 @@
+\begin{table*}[ht]
+\centering
+\caption{Ablation study: test ROC AUC (mean $\pm$ SD over 10 seeds) of the tuned configurations, not re-tuned. (a) Networks trained with subsets of the inputs; the federation cost is the Welch difference between the centralized DNN and FedAvg. (b) Tuned configurations trained with weight decay on all parameters (``with'', as in the main runs) or on the perceptron only (``without''); the last two columns describe the federated trajectories. Data: own experiments.}
+\label{tab:ablation}
+\begin{tblr}{
+    colspec = {X[2.3,l] X[1.3,c] X[1.3,c] X[1.6,c] X[1.5,c]},
+    cells   = {font=\small},
+    row{2,10}  = {font=\small\bfseries},
+    }
+\toprule
+\SetCell[c=5]{l}\textit{(a) Input blocks} & & & & \\
+Inputs & Centralized DNN & FedAvg & Federation cost [95\% CI] & \\
+Student emb.\ + skill emb.\ + features (full) & 0.788 $\pm$ 0.002 & 0.777 $\pm$ 0.001 & 0.011 [0.010, 0.013] & \\
+Skill emb.\ + features & 0.785 $\pm$ 0.001 & 0.777 $\pm$ 0.002 & 0.008 [0.007, 0.010] & \\
+Student emb.\ + features & 0.778 $\pm$ 0.002 & 0.778 $\pm$ 0.001 & 0.000 [$-$0.002, 0.002] & \\
+Features only & 0.779 $\pm$ 0.001 & 0.779 $\pm$ 0.000 & 0.000 [0.000, 0.001] & \\
+Embeddings only & 0.779 $\pm$ 0.002 & 0.705 $\pm$ 0.002 & 0.074 [0.072, 0.076] & \\
+FedAvg, preliminary configuration: full / features only & -- & 0.630 / 0.765 & -- & \\
+\midrule
+\SetCell[c=5]{l}\textit{(b) Weight decay on the embedding tables} & & & & \\
+Condition & AUC, with & AUC, without & SD rounds 501--1{,}000, with / without & Rounds with AUC $<$ 0.5, with / without \\
+DNN, centralized & 0.788 $\pm$ 0.002 & 0.780 $\pm$ 0.001 & -- & -- \\
+FedAvg & 0.777 $\pm$ 0.001 & 0.731 $\pm$ 0.003 & 0.007 / 0.003 & 0\% / 0\% \\
+FedProx $\mu=1.0$ & 0.775 $\pm$ 0.003 & 0.658 $\pm$ 0.011 & 0.177 / 0.003 & 40\% / 0\% \\
+FedProx, $\mu$ tuned & 0.778 $\pm$ 0.004 & 0.557 $\pm$ 0.013 & 0.142 / 0.026 & 12\% / 43\% \\
+\bottomrule
+\end{tblr}
+\end{table*}

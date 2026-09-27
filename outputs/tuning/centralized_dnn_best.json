@@ -1,0 +1,31 @@
+{
+  "study": "centralized_dnn",
+  "best_value": 0.8069813999199213,
+  "best_params": {
+    "optimizer": "adam",
+    "lr_adam": 0.005472075340482052,
+    "emb_dim": 32,
+    "h1": 128,
+    "h2": 128,
+    "dropout": 0.4,
+    "weight_decay": 0.0031137629439129755,
+    "batch_size": 64
+  },
+  "best_user_attrs": {
+    "best_epoch": 17
+  },
+  "best_trial": 93,
+  "n_trials": 108,
+  "n_complete": 50,
+  "n_pruned": 58,
+  "n_failed": 0,
+  "param_importances": {
+    "weight_decay": 0.539050555018941,
+    "dropout": 0.3555465072007208,
+    "h2": 0.059705382400837434,
+    "batch_size": 0.016746530896637236,
+    "h1": 0.014010607261891591,
+    "emb_dim": 0.009913206955634845,
+    "optimizer": 0.005027210265337066
+  }
+}

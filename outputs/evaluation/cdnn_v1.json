@@ -1,0 +1,739 @@
+{
+  "model": "cdnn_v1",
+  "arch": {
+    "emb_dim": 10,
+    "h1": 32,
+    "h2": 16,
+    "dropout": 0.0
+  },
+  "hp": {
+    "optimizer": "adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "batch_size": 32
+  },
+  "max_epochs": 60,
+  "patience": 8,
+  "runs": [
+    {
+      "condition": "cdnn_v1",
+      "seed": 42,
+      "selected_epoch": 9,
+      "selected": {
+        "at_0.5": {
+          "threshold": 0.5,
+          "roc_auc": 0.7781726132796517,
+          "balanced_accuracy": 0.6856921769275086,
+          "f1_score": 0.8068008539188777,
+          "precision": 0.7607476635514019,
+          "recall": 0.858789157604285,
+          "accuracy": 0.7353524804177546,
+          "positive_rate": 0.7263707571801566
+        },
+        "calibrated": {
+          "threshold": 0.6483452075719834,
+          "roc_auc": 0.7781726132796517,
+          "balanced_accuracy": 0.7030793365717626,
+          "f1_score": 0.7736006683375104,
+          "precision": 0.7970390772938544,
+          "recall": 0.7515013796461614,
+          "accuracy": 0.7169712793733681,
+          "positive_rate": 0.6066840731070496
+        },
+        "val_auc": 0.784468387143741,
+        "seen_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7784366224405108,
+            "balanced_accuracy": 0.6896339499225,
+            "f1_score": 0.8080194410692588,
+            "precision": 0.7705677867902665,
+            "recall": 0.8492975734355045,
+            "accuracy": 0.7375960141166701,
+            "positive_rate": 0.7166286070168154
+          },
+          "calibrated": {
+            "threshold": 0.6483452075719834,
+            "roc_auc": 0.7784366224405108,
+            "balanced_accuracy": 0.6995668337937856,
+            "f1_score": 0.767616191904048,
+            "precision": 0.8025078369905956,
+            "recall": 0.735632183908046,
+            "accuracy": 0.7104006643138883,
+            "positive_rate": 0.5960141166701266
+          }
+        },
+        "new_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7791770357147154,
+            "balanced_accuracy": 0.6821328660045625,
+            "f1_score": 0.8055725658297612,
+            "precision": 0.7510705109905795,
+            "recall": 0.8686034995047871,
+            "accuracy": 0.7330811265237495,
+            "positive_rate": 0.7362337116435477
+          },
+          "calibrated": {
+            "threshold": 0.6483452075719834,
+            "roc_auc": 0.7791770357147154,
+            "balanced_accuracy": 0.706974186870279,
+            "f1_score": 0.7796212502094855,
+            "precision": 0.7916950306330838,
+            "recall": 0.7679102013865963,
+            "accuracy": 0.7236233711643548,
+            "positive_rate": 0.6174863387978142
+          }
+        }
+      }
+    },
+    {
+      "condition": "cdnn_v1",
+      "seed": 43,
+      "selected_epoch": 12,
+      "selected": {
+        "at_0.5": {
+          "threshold": 0.5,
+          "roc_auc": 0.7758356916967446,
+          "balanced_accuracy": 0.66888126047904,
+          "f1_score": 0.8088420740301164,
+          "precision": 0.7448087431693989,
+          "recall": 0.8849212790131472,
+          "accuracy": 0.7308616187989556,
+          "positive_rate": 0.764490861618799
+        },
+        "calibrated": {
+          "threshold": 0.7960199558734894,
+          "roc_auc": 0.7758356916967446,
+          "balanced_accuracy": 0.7057051285525567,
+          "f1_score": 0.7334538878842677,
+          "precision": 0.8279240661359462,
+          "recall": 0.6583346859276091,
+          "accuracy": 0.6921148825065274,
+          "positive_rate": 0.5116449086161879
+        },
+        "val_auc": 0.7890177022288551,
+        "seen_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7810496416809729,
+            "balanced_accuracy": 0.6835982355014383,
+            "f1_score": 0.8134684147794994,
+            "precision": 0.7625698324022346,
+            "recall": 0.8716475095785441,
+            "accuracy": 0.7400871911978409,
+            "positive_rate": 0.7432011625493046
+          },
+          "calibrated": {
+            "threshold": 0.7960199558734894,
+            "roc_auc": 0.7810496416809729,
+            "balanced_accuracy": 0.7061156777364697,
+            "f1_score": 0.7238995998544926,
+            "precision": 0.8410819949281487,
+            "recall": 0.6353767560664112,
+            "accuracy": 0.684866099231887,
+            "positive_rate": 0.49117708117085324
+          }
+        },
+        "new_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.773215004140618,
+            "balanced_accuracy": 0.6549333882742512,
+            "f1_score": 0.8042546905008126,
+            "precision": 0.727807486631016,
+            "recall": 0.8986464179597227,
+            "accuracy": 0.7215216477511559,
+            "positive_rate": 0.7860445565363599
+          },
+          "calibrated": {
+            "threshold": 0.7960199558734894,
+            "roc_auc": 0.773215004140618,
+            "balanced_accuracy": 0.705987484392725,
+            "f1_score": 0.7428982380438691,
+            "precision": 0.8156336360047375,
+            "recall": 0.6820732915153516,
+            "accuracy": 0.6994535519125683,
+            "positive_rate": 0.5323665405632618
+          }
+        }
+      }
+    },
+    {
+      "condition": "cdnn_v1",
+      "seed": 44,
+      "selected_epoch": 10,
+      "selected": {
+        "at_0.5": {
+          "threshold": 0.5,
+          "roc_auc": 0.7767279760330754,
+          "balanced_accuracy": 0.6871483908597147,
+          "f1_score": 0.8052425845021844,
+          "precision": 0.7628521638106303,
+          "recall": 0.8526213277065412,
+          "accuracy": 0.734621409921671,
+          "positive_rate": 0.7191644908616188
+        },
+        "calibrated": {
+          "threshold": 0.6829090929031372,
+          "roc_auc": 0.7767279760330754,
+          "balanced_accuracy": 0.7031319189713781,
+          "f1_score": 0.7562618759716704,
+          "precision": 0.8081964186819273,
+          "recall": 0.7105989287453336,
+          "accuracy": 0.7052741514360313,
+          "positive_rate": 0.5657441253263708
+        },
+        "val_auc": 0.7858612698528252,
+        "seen_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7776413474766078,
+            "balanced_accuracy": 0.6953206301564022,
+            "f1_score": 0.8078395345276375,
+            "precision": 0.7761106207708149,
+            "recall": 0.8422733077905492,
+            "accuracy": 0.7394643969275483,
+            "positive_rate": 0.7056259082416442
+          },
+          "calibrated": {
+            "threshold": 0.6829090929031372,
+            "roc_auc": 0.7776413474766078,
+            "balanced_accuracy": 0.7024151005605012,
+            "f1_score": 0.7506471095772217,
+            "precision": 0.8167480285392414,
+            "recall": 0.6944444444444444,
+            "accuracy": 0.7000207598090098,
+            "positive_rate": 0.5528337139298318
+          }
+        },
+        "new_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7773896100945153,
+            "balanced_accuracy": 0.6794917303162165,
+            "f1_score": 0.8026396562308165,
+            "precision": 0.7499283051333524,
+            "recall": 0.8633212281280951,
+            "accuracy": 0.7297183690626313,
+            "positive_rate": 0.7328709541824296
+          },
+          "calibrated": {
+            "threshold": 0.6829090929031372,
+            "roc_auc": 0.7773896100945153,
+            "balanced_accuracy": 0.704310710748479,
+            "f1_score": 0.7618882932733875,
+            "precision": 0.7999273783587509,
+            "recall": 0.7273027401782767,
+            "accuracy": 0.7105926860025221,
+            "positive_rate": 0.5788146279949559
+          }
+        }
+      }
+    },
+    {
+      "condition": "cdnn_v1",
+      "seed": 45,
+      "selected_epoch": 8,
+      "selected": {
+        "at_0.5": {
+          "threshold": 0.5,
+          "roc_auc": 0.7705984656779084,
+          "balanced_accuracy": 0.6733571351891592,
+          "f1_score": 0.806124746678676,
+          "precision": 0.7497905612957274,
+          "recall": 0.8716117513390683,
+          "accuracy": 0.7302349869451698,
+          "positive_rate": 0.7479895561357702
+        },
+        "calibrated": {
+          "threshold": 0.7478668570518494,
+          "roc_auc": 0.7705984656779084,
+          "balanced_accuracy": 0.7010371093867,
+          "f1_score": 0.7365130403715613,
+          "precision": 0.8188679245283019,
+          "recall": 0.6692095439052101,
+          "accuracy": 0.6919060052219321,
+          "positive_rate": 0.5258485639686684
+        },
+        "val_auc": 0.7904864169669615,
+        "seen_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7720797283521116,
+            "balanced_accuracy": 0.686730637318993,
+            "f1_score": 0.8104771940388379,
+            "precision": 0.7667331244659641,
+            "recall": 0.859514687100894,
+            "accuracy": 0.738634004567158,
+            "positive_rate": 0.7288768943325722
+          },
+          "calibrated": {
+            "threshold": 0.7478668570518494,
+            "roc_auc": 0.7720797283521116,
+            "balanced_accuracy": 0.699533389421346,
+            "f1_score": 0.7306733167082294,
+            "precision": 0.8263497179693795,
+            "recall": 0.6548531289910601,
+            "accuracy": 0.6861116877724724,
+            "positive_rate": 0.5152584596221714
+          }
+        },
+        "new_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7705112388610502,
+            "balanced_accuracy": 0.6606835676182864,
+            "f1_score": 0.8017964071856287,
+            "precision": 0.7334976718707203,
+            "recall": 0.8841201716738197,
+            "accuracy": 0.7217318200924758,
+            "positive_rate": 0.7673392181588903
+          },
+          "calibrated": {
+            "threshold": 0.7478668570518494,
+            "roc_auc": 0.7705112388610502,
+            "balanced_accuracy": 0.7029293272799033,
+            "f1_score": 0.7423862414905052,
+            "precision": 0.8115942028985508,
+            "recall": 0.6840541432816111,
+            "accuracy": 0.6977721731820092,
+            "positive_rate": 0.5365699873896596
+          }
+        }
+      }
+    },
+    {
+      "condition": "cdnn_v1",
+      "seed": 46,
+      "selected_epoch": 8,
+      "selected": {
+        "at_0.5": {
+          "threshold": 0.5,
+          "roc_auc": 0.7710483637317606,
+          "balanced_accuracy": 0.6742079146115079,
+          "f1_score": 0.8052397801701423,
+          "precision": 0.7509126649817467,
+          "recall": 0.8680409024509008,
+          "accuracy": 0.7298172323759791,
+          "positive_rate": 0.7438120104438642
+        },
+        "calibrated": {
+          "threshold": 0.6375303548574448,
+          "roc_auc": 0.7710483637317606,
+          "balanced_accuracy": 0.6977368268965536,
+          "f1_score": 0.7779695848746404,
+          "precision": 0.7881412391738841,
+          "recall": 0.7680571335822107,
+          "accuracy": 0.717911227154047,
+          "positive_rate": 0.6270496083550914
+        },
+        "val_auc": 0.7891808927553113,
+        "seen_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7746689670331336,
+            "balanced_accuracy": 0.6843567500786369,
+            "f1_score": 0.80950233047662,
+            "precision": 0.7649900539926116,
+            "recall": 0.859514687100894,
+            "accuracy": 0.7369732198463774,
+            "positive_rate": 0.7305376790533528
+          },
+          "calibrated": {
+            "threshold": 0.6375303548574448,
+            "roc_auc": 0.7746689670331336,
+            "balanced_accuracy": 0.7023448010580928,
+            "f1_score": 0.7754160487724502,
+            "precision": 0.801157643854273,
+            "recall": 0.7512771392081737,
+            "accuracy": 0.7170438031970106,
+            "positive_rate": 0.6097155906165663
+          }
+        },
+        "new_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7694572286673206,
+            "balanced_accuracy": 0.6645708030392918,
+            "f1_score": 0.8009650180940893,
+            "precision": 0.7371634748820427,
+            "recall": 0.8768570485308683,
+            "accuracy": 0.7225725094577553,
+            "positive_rate": 0.757250945775536
+          },
+          "calibrated": {
+            "threshold": 0.6375303548574448,
+            "roc_auc": 0.7694572286673206,
+            "balanced_accuracy": 0.6937449268599032,
+            "f1_score": 0.780511811023622,
+            "precision": 0.7756765568959896,
+            "recall": 0.7854077253218884,
+            "accuracy": 0.7187894073139974,
+            "positive_rate": 0.644598570828079
+          }
+        }
+      }
+    },
+    {
+      "condition": "cdnn_v1",
+      "seed": 47,
+      "selected_epoch": 6,
+      "selected": {
+        "at_0.5": {
+          "threshold": 0.5,
+          "roc_auc": 0.776620980833858,
+          "balanced_accuracy": 0.6910029755172353,
+          "f1_score": 0.8029423151374371,
+          "precision": 0.767693218833284,
+          "recall": 0.8415841584158416,
+          "accuracy": 0.7342036553524804,
+          "positive_rate": 0.7053785900783289
+        },
+        "calibrated": {
+          "threshold": 0.6101781952381135,
+          "roc_auc": 0.776620980833858,
+          "balanced_accuracy": 0.7016101909825083,
+          "f1_score": 0.7691919616581182,
+          "precision": 0.7979762735519889,
+          "recall": 0.742411946112644,
+          "accuracy": 0.7133159268929504,
+          "positive_rate": 0.5986422976501306
+        },
+        "val_auc": 0.7878219827952293,
+        "seen_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7806138226633469,
+            "balanced_accuracy": 0.6995236308650818,
+            "f1_score": 0.8070337806571032,
+            "precision": 0.7806624888093107,
+            "recall": 0.8352490421455939,
+            "accuracy": 0.7402947892879386,
+            "positive_rate": 0.6956611999169607
+          },
+          "calibrated": {
+            "threshold": 0.6101781952381135,
+            "roc_auc": 0.7806138226633469,
+            "balanced_accuracy": 0.7045905954045726,
+            "f1_score": 0.7677343618983733,
+            "precision": 0.808548216178029,
+            "recall": 0.7308429118773946,
+            "accuracy": 0.712476645214864,
+            "positive_rate": 0.5877101930662237
+          }
+        },
+        "new_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7741838533657963,
+            "balanced_accuracy": 0.6828874762012327,
+            "f1_score": 0.798818407960199,
+            "precision": 0.7549221275345284,
+            "recall": 0.8481346979201057,
+            "accuracy": 0.7280369903320723,
+            "positive_rate": 0.7152164775115595
+          },
+          "calibrated": {
+            "threshold": 0.6101781952381135,
+            "roc_auc": 0.7741838533657963,
+            "balanced_accuracy": 0.6990495386700492,
+            "f1_score": 0.7706576728499157,
+            "precision": 0.7876594277835229,
+            "recall": 0.754374380983823,
+            "accuracy": 0.7141656158049601,
+            "positive_rate": 0.6097099621689785
+          }
+        }
+      }
+    },
+    {
+      "condition": "cdnn_v1",
+      "seed": 48,
+      "selected_epoch": 11,
+      "selected": {
+        "at_0.5": {
+          "threshold": 0.5,
+          "roc_auc": 0.7747760802759236,
+          "balanced_accuracy": 0.6916513887696356,
+          "f1_score": 0.7993441599000625,
+          "precision": 0.7701218594854822,
+          "recall": 0.8308716117513391,
+          "accuracy": 0.7315926892950392,
+          "positive_rate": 0.6942036553524804
+        },
+        "calibrated": {
+          "threshold": 0.6264668583869935,
+          "roc_auc": 0.7747760802759236,
+          "balanced_accuracy": 0.6997892995672554,
+          "f1_score": 0.7678466324728832,
+          "precision": 0.7965806001395673,
+          "recall": 0.7411134556078559,
+          "accuracy": 0.711644908616188,
+          "positive_rate": 0.5986422976501306
+        },
+        "val_auc": 0.7925830209053737,
+        "seen_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7814624380852764,
+            "balanced_accuracy": 0.7026803817016648,
+            "f1_score": 0.8025637017351883,
+            "precision": 0.7862174578866769,
+            "recall": 0.8196040868454662,
+            "accuracy": 0.7378036122067677,
+            "positive_rate": 0.6778077641685697
+          },
+          "calibrated": {
+            "threshold": 0.6264668583869935,
+            "roc_auc": 0.7814624380852764,
+            "balanced_accuracy": 0.7027235846303687,
+            "f1_score": 0.7622105796856515,
+            "precision": 0.8096947935368043,
+            "recall": 0.7199872286079183,
+            "accuracy": 0.7079094872327174,
+            "positive_rate": 0.5781606809217356
+          }
+        },
+        "new_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7700145938404179,
+            "balanced_accuracy": 0.6812380075312083,
+            "f1_score": 0.7961316487287474,
+            "precision": 0.7545830869308102,
+            "recall": 0.8425222845823704,
+            "accuracy": 0.7253047498949138,
+            "positive_rate": 0.7108028583438419
+          },
+          "calibrated": {
+            "threshold": 0.6264668583869935,
+            "roc_auc": 0.7700145938404179,
+            "balanced_accuracy": 0.6975576941693951,
+            "f1_score": 0.7734270414993306,
+            "precision": 0.7841873091279267,
+            "recall": 0.7629580719709476,
+            "accuracy": 0.7154266498528794,
+            "positive_rate": 0.6193778898696931
+          }
+        }
+      }
+    },
+    {
+      "condition": "cdnn_v1",
+      "seed": 49,
+      "selected_epoch": 8,
+      "selected": {
+        "at_0.5": {
+          "threshold": 0.5,
+          "roc_auc": 0.769926542482823,
+          "balanced_accuracy": 0.6887139295911209,
+          "f1_score": 0.7958336596444514,
+          "precision": 0.7689164648910412,
+          "recall": 0.8247037818535952,
+          "accuracy": 0.7277284595300261,
+          "positive_rate": 0.690130548302872
+        },
+        "calibrated": {
+          "threshold": 0.6777327823638917,
+          "roc_auc": 0.769926542482823,
+          "balanced_accuracy": 0.6968132593604516,
+          "f1_score": 0.7320085929108485,
+          "precision": 0.816004789463181,
+          "recall": 0.6636909592598604,
+          "accuracy": 0.6873107049608355,
+          "positive_rate": 0.5233420365535248
+        },
+        "val_auc": 0.7843931617709509,
+        "seen_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7684671676690504,
+            "balanced_accuracy": 0.6934626199923448,
+            "f1_score": 0.795301487862177,
+            "precision": 0.7805102981862896,
+            "recall": 0.8106641123882503,
+            "accuracy": 0.7286692962424746,
+            "positive_rate": 0.6753165870873988
+          },
+          "calibrated": {
+            "threshold": 0.6777327823638917,
+            "roc_auc": 0.7684671676690504,
+            "balanced_accuracy": 0.6934651780604917,
+            "f1_score": 0.7240886347390993,
+            "precision": 0.8222402597402597,
+            "recall": 0.6468710089399745,
+            "accuracy": 0.6794685488893503,
+            "positive_rate": 0.5115216940004153
+          }
+        },
+        "new_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.772739935777937,
+            "balanced_accuracy": 0.684503434221076,
+            "f1_score": 0.7963659147869674,
+            "precision": 0.7576751117734725,
+            "recall": 0.8392208649719379,
+            "accuracy": 0.726775956284153,
+            "positive_rate": 0.7051282051282052
+          },
+          "calibrated": {
+            "threshold": 0.6777327823638917,
+            "roc_auc": 0.772739935777937,
+            "balanced_accuracy": 0.7005761349560762,
+            "f1_score": 0.7399569583931134,
+            "precision": 0.8099725166862976,
+            "recall": 0.6810828656322219,
+            "accuracy": 0.6952501050861707,
+            "positive_rate": 0.5353089533417402
+          }
+        }
+      }
+    },
+    {
+      "condition": "cdnn_v1",
+      "seed": 50,
+      "selected_epoch": 11,
+      "selected": {
+        "at_0.5": {
+          "threshold": 0.5,
+          "roc_auc": 0.779205077729243,
+          "balanced_accuracy": 0.6840905531677948,
+          "f1_score": 0.8035536493834725,
+          "precision": 0.7607308584686775,
+          "recall": 0.8514851485148515,
+          "accuracy": 0.7321148825065275,
+          "positive_rate": 0.7202088772845953
+        },
+        "calibrated": {
+          "threshold": 0.6554606962203979,
+          "roc_auc": 0.779205077729243,
+          "balanced_accuracy": 0.7037771943952296,
+          "f1_score": 0.7692696913476135,
+          "precision": 0.8005968053361419,
+          "recall": 0.7403018990423632,
+          "accuracy": 0.7142558746736293,
+          "positive_rate": 0.5949869451697128
+        },
+        "val_auc": 0.8043254589354396,
+        "seen_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7798896998912348,
+            "balanced_accuracy": 0.6870607228532124,
+            "f1_score": 0.8018390804597701,
+            "precision": 0.770999115826702,
+            "recall": 0.8352490421455939,
+            "accuracy": 0.7315756695038406,
+            "positive_rate": 0.7043803197010587
+          },
+          "calibrated": {
+            "threshold": 0.6554606962203979,
+            "roc_auc": 0.7798896998912348,
+            "balanced_accuracy": 0.7026333890423729,
+            "f1_score": 0.7610499576629974,
+            "precision": 0.8103137396321674,
+            "recall": 0.7174329501915708,
+            "accuracy": 0.7070790948723272,
+            "positive_rate": 0.5756695038405647
+          }
+        },
+        "new_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.780472398967299,
+            "balanced_accuracy": 0.68167861052433,
+            "f1_score": 0.80526638089406,
+            "precision": 0.7507850413930917,
+            "recall": 0.8682733575437438,
+            "accuracy": 0.7326607818411097,
+            "positive_rate": 0.7362337116435477
+          },
+          "calibrated": {
+            "threshold": 0.6554606962203979,
+            "roc_auc": 0.780472398967299,
+            "balanced_accuracy": 0.7055717041034412,
+            "f1_score": 0.7774231479926088,
+            "precision": 0.7913816689466484,
+            "recall": 0.7639484978540773,
+            "accuracy": 0.7215216477511559,
+            "positive_rate": 0.6145439260193358
+          }
+        }
+      }
+    },
+    {
+      "condition": "cdnn_v1",
+      "seed": 51,
+      "selected_epoch": 8,
+      "selected": {
+        "at_0.5": {
+          "threshold": 0.5,
+          "roc_auc": 0.7770028688310647,
+          "balanced_accuracy": 0.6934236676138155,
+          "f1_score": 0.8050742574257426,
+          "precision": 0.769026156346978,
+          "recall": 0.8446680733647135,
+          "accuracy": 0.7368146214099217,
+          "positive_rate": 0.7067362924281985
+        },
+        "calibrated": {
+          "threshold": 0.6590563225746154,
+          "roc_auc": 0.7770028688310647,
+          "balanced_accuracy": 0.7041095427356558,
+          "f1_score": 0.7562705414288186,
+          "precision": 0.809479725976671,
+          "recall": 0.7096250608667424,
+          "accuracy": 0.7056919060052219,
+          "positive_rate": 0.5640731070496083
+        },
+        "val_auc": 0.7850337907521324,
+        "seen_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7782721481329891,
+            "balanced_accuracy": 0.6976755687438181,
+            "f1_score": 0.8055555555555556,
+            "precision": 0.7795698924731183,
+            "recall": 0.8333333333333334,
+            "accuracy": 0.7384264064770604,
+            "positive_rate": 0.6950384056466681
+          },
+          "calibrated": {
+            "threshold": 0.6590563225746154,
+            "roc_auc": 0.7782721481329891,
+            "balanced_accuracy": 0.7028038321755706,
+            "f1_score": 0.750086415485655,
+            "precision": 0.8176337603617182,
+            "recall": 0.6928480204342273,
+            "accuracy": 0.6998131617189122,
+            "positive_rate": 0.5509653311189537
+          }
+        },
+        "new_pairs": {
+          "at_0.5": {
+            "threshold": 0.5,
+            "roc_auc": 0.7773635462554856,
+            "balanced_accuracy": 0.6896169112116706,
+            "f1_score": 0.8045905707196029,
+            "precision": 0.7587013746709564,
+            "recall": 0.8563882469461869,
+            "accuracy": 0.7351828499369483,
+            "positive_rate": 0.7185792349726776
+          },
+          "calibrated": {
+            "threshold": 0.6590563225746154,
+            "roc_auc": 0.7773635462554856,
+            "balanced_accuracy": 0.7058807467662223,
+            "f1_score": 0.7624653739612188,
+            "precision": 0.8016017473607572,
+            "recall": 0.7269725982172334,
+            "accuracy": 0.7116435477091215,
+            "positive_rate": 0.5773434216057167
+          }
+        }
+      }
+    }
+  ]
+}

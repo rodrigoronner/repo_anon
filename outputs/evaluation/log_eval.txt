@@ -1,0 +1,90 @@
+seed 42 it  187 | AUC 0.7884 BalAcc 0.6979
+seed 43 it  208 | AUC 0.7888 BalAcc 0.7029
+seed 44 it  334 | AUC 0.7896 BalAcc 0.7078
+seed 45 it  209 | AUC 0.7884 BalAcc 0.7027
+seed 46 it  187 | AUC 0.7891 BalAcc 0.7011
+seed 47 it  213 | AUC 0.7879 BalAcc 0.7006
+seed 48 it  172 | AUC 0.7914 BalAcc 0.7015
+seed 49 it  302 | AUC 0.7871 BalAcc 0.7001
+seed 50 it  262 | AUC 0.7881 BalAcc 0.7064
+seed 51 it  245 | AUC 0.7883 BalAcc 0.7070
+cdnn_tuned  seed 44 ep  6 | AUC 0.7893 BalAcc 0.7120
+cdnn_tuned  seed 45 ep 11 | AUC 0.7890 BalAcc 0.6569
+cdnn_tuned  seed 48 ep 11 | AUC 0.7887 BalAcc 0.6994
+cdnn_tuned  seed 50 ep 13 | AUC 0.7903 BalAcc 0.7156
+cdnn_tuned  seed 43 ep 17 | AUC 0.7849 BalAcc 0.7027
+cdnn_tuned  seed 46 ep 19 | AUC 0.7882 BalAcc 0.6731
+cdnn_tuned  seed 49 ep 19 | AUC 0.7878 BalAcc 0.6573
+cdnn_tuned  seed 42 ep 27 | AUC 0.7912 BalAcc 0.7114
+cdnn_tuned  seed 51 ep 15 | AUC 0.7873 BalAcc 0.7029
+cdnn_tuned  seed 47 ep 30 | AUC 0.7883 BalAcc 0.6705
+cdnn_v1     seed 42 ep  9 | AUC 0.7782 BalAcc 0.6857
+cdnn_v1     seed 44 ep 10 | AUC 0.7767 BalAcc 0.6871
+cdnn_v1     seed 43 ep 12 | AUC 0.7758 BalAcc 0.6689
+cdnn_v1     seed 45 ep  8 | AUC 0.7706 BalAcc 0.6734
+cdnn_v1     seed 47 ep  6 | AUC 0.7766 BalAcc 0.6910
+cdnn_v1     seed 46 ep  8 | AUC 0.7710 BalAcc 0.6742
+cdnn_v1     seed 49 ep  8 | AUC 0.7699 BalAcc 0.6887
+cdnn_v1     seed 48 ep 11 | AUC 0.7748 BalAcc 0.6917
+cdnn_v1     seed 51 ep  8 | AUC 0.7770 BalAcc 0.6934
+cdnn_v1     seed 50 ep 11 | AUC 0.7792 BalAcc 0.6841
+FedAvg             seed 42 r 948 | AUC 0.7755 BalAcc 0.6766 pos 0.75
+FedAvg             seed 43 r 936 | AUC 0.7746 BalAcc 0.6653 pos 0.78
+FedProx_mu0.1      seed 43 r 938 | AUC 0.7782 BalAcc 0.6148 pos 0.88
+FedProx_mu0.5      seed 43 r 933 | AUC 0.7764 BalAcc 0.6703 pos 0.77
+FedProx_mu0.1      seed 42 r 950 | AUC 0.7771 BalAcc 0.6405 pos 0.84
+FedProx_mu0.5      seed 42 r 948 | AUC 0.7764 BalAcc 0.6815 pos 0.74
+FedProx_muTuned    seed 42 r1000 | AUC 0.7812 BalAcc 0.5000 pos 1.00
+FedAvg_v1protocol  seed 42 r 964 | AUC 0.6377 BalAcc 0.5933 pos 0.80
+FedAvg             seed 44 r1000 | AUC 0.7780 BalAcc 0.6752 pos 0.77
+FedProx_mu0.5      seed 44 r 957 | AUC 0.7771 BalAcc 0.6588 pos 0.80
+FedProx_mu0.1      seed 44 r 994 | AUC 0.7782 BalAcc 0.6126 pos 0.89
+FedProx_muTuned    seed 43 r 827 | AUC 0.7806 BalAcc 0.5000 pos 1.00
+FedAvg_v1protocol  seed 43 r 422 | AUC 0.6370 BalAcc 0.5814 pos 0.85
+FedAvg             seed 45 r 993 | AUC 0.7782 BalAcc 0.6589 pos 0.80
+FedProx_mu0.1      seed 45 r 971 | AUC 0.7788 BalAcc 0.6132 pos 0.89
+FedProx_muTuned    seed 44 r 922 | AUC 0.7793 BalAcc 0.5000 pos 1.00
+FedProx_mu0.5      seed 45 r 974 | AUC 0.7790 BalAcc 0.6749 pos 0.76
+FedAvg_v1protocol  seed 44 r 988 | AUC 0.6296 BalAcc 0.5729 pos 0.84
+FedAvg             seed 46 r 987 | AUC 0.7774 BalAcc 0.6601 pos 0.80
+FedProx_muTuned    seed 45 r 951 | AUC 0.7778 BalAcc 0.5000 pos 1.00
+FedProx_mu0.1      seed 46 r 898 | AUC 0.7779 BalAcc 0.5878 pos 0.92
+FedProx_mu0.5      seed 46 r 890 | AUC 0.7758 BalAcc 0.6563 pos 0.81
+FedAvg_v1protocol  seed 45 r 997 | AUC 0.6408 BalAcc 0.5829 pos 0.83
+FedProx_muTuned    seed 46 r 361 | AUC 0.7768 BalAcc 0.5000 pos 1.00
+FedAvg             seed 47 r 995 | AUC 0.7770 BalAcc 0.6672 pos 0.78
+FedProx_mu0.1      seed 47 r 973 | AUC 0.7785 BalAcc 0.6300 pos 0.86
+FedAvg_v1protocol  seed 46 r 473 | AUC 0.6197 BalAcc 0.5618 pos 0.88
+FedProx_mu0.5      seed 47 r 973 | AUC 0.7773 BalAcc 0.6712 pos 0.77
+FedProx_muTuned    seed 47 r 901 | AUC 0.7794 BalAcc 0.5000 pos 1.00
+FedAvg             seed 48 r 976 | AUC 0.7773 BalAcc 0.6683 pos 0.78
+FedAvg_v1protocol  seed 47 r 362 | AUC 0.6328 BalAcc 0.5699 pos 0.87
+FedProx_mu0.1      seed 48 r 874 | AUC 0.7776 BalAcc 0.6115 pos 0.89
+FedProx_mu0.5      seed 48 r 875 | AUC 0.7759 BalAcc 0.6788 pos 0.74
+FedProx_mu1.0      seed 42 r 361 | AUC 0.7780 BalAcc 0.5000 pos 1.00
+FedProx_muTuned    seed 48 r 695 | AUC 0.7798 BalAcc 0.5000 pos 1.00
+FedProx_mu1.0      seed 43 r 951 | AUC 0.7734 BalAcc 0.5000 pos 1.00
+FedAvg             seed 49 r 996 | AUC 0.7776 BalAcc 0.6722 pos 0.77
+FedProx_mu1.0      seed 44 r 585 | AUC 0.7768 BalAcc 0.5000 pos 1.00
+FedAvg_v1protocol  seed 48 r 976 | AUC 0.6257 BalAcc 0.5800 pos 0.82
+FedProx_mu0.1      seed 49 r 983 | AUC 0.7787 BalAcc 0.6188 pos 0.87
+FedProx_mu0.5      seed 49 r 980 | AUC 0.7782 BalAcc 0.6763 pos 0.76
+FedProx_muTuned    seed 49 r 467 | AUC 0.7804 BalAcc 0.5000 pos 1.00
+FedAvg             seed 50 r 962 | AUC 0.7779 BalAcc 0.6720 pos 0.77
+FedProx_mu1.0      seed 45 r 204 | AUC 0.7759 BalAcc 0.5000 pos 1.00
+FedProx_mu0.1      seed 50 r 963 | AUC 0.7785 BalAcc 0.6178 pos 0.88
+FedAvg_v1protocol  seed 49 r 384 | AUC 0.6149 BalAcc 0.5411 pos 0.94
+FedProx_mu0.5      seed 50 r 962 | AUC 0.7772 BalAcc 0.6751 pos 0.76
+FedProx_muTuned    seed 50 r 542 | AUC 0.7686 BalAcc 0.5000 pos 1.00
+FedProx_mu1.0      seed 46 r  43 | AUC 0.7739 BalAcc 0.5000 pos 1.00
+FedAvg             seed 51 r 989 | AUC 0.7764 BalAcc 0.6864 pos 0.73
+FedProx_mu0.1      seed 51 r 996 | AUC 0.7779 BalAcc 0.6030 pos 0.90
+FedAvg_v1protocol  seed 50 r 738 | AUC 0.6363 BalAcc 0.5806 pos 0.85
+FedProx_mu0.5      seed 51 r 989 | AUC 0.7760 BalAcc 0.6816 pos 0.73
+FedProx_muTuned    seed 51 r 595 | AUC 0.7760 BalAcc 0.5000 pos 1.00
+FedProx_mu1.0      seed 47 r 260 | AUC 0.7723 BalAcc 0.5000 pos 1.00
+FedAvg_v1protocol  seed 51 r 371 | AUC 0.6271 BalAcc 0.5624 pos 0.88
+FedProx_mu1.0      seed 48 r  28 | AUC 0.7752 BalAcc 0.5000 pos 1.00
+FedProx_mu1.0      seed 49 r  61 | AUC 0.7772 BalAcc 0.5000 pos 1.00
+FedProx_mu1.0      seed 50 r  28 | AUC 0.7699 BalAcc 0.5000 pos 1.00
+FedProx_mu1.0      seed 51 r  30 | AUC 0.7795 BalAcc 0.5000 pos 1.00

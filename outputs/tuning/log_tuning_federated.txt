@@ -1,0 +1,10 @@
+[I 2026-09-26 10:00:05,436] A new study created in Journal with name: federated_FedAvg
+[federated_FedAvg] best val AUC 0.7822 | {'optimizer': 'sgd', 'lr_sgd': 0.21708861222739265, 'local_epochs': 2, 'batch_size': 32, 'weight_decay': 0.0030564236337135248}
+[I 2026-09-26 10:42:02,892] A new study created in Journal with name: federated_FedProx_mu0.1
+[federated_FedProx_mu0.1] best val AUC 0.7853 | {'optimizer': 'sgd', 'lr_sgd': 0.14586756276351537, 'local_epochs': 1, 'batch_size': 16, 'weight_decay': 0.008686809107072178}
+[I 2026-09-26 11:29:54,748] A new study created in Journal with name: federated_FedProx_mu0.5
+[federated_FedProx_mu0.5] best val AUC 0.7855 | {'optimizer': 'sgd', 'lr_sgd': 0.3608639932902437, 'local_epochs': 1, 'batch_size': 16, 'weight_decay': 0.0030945924008762664}
+[I 2026-09-26 12:23:55,725] A new study created in Journal with name: federated_FedProx_mu1.0
+[federated_FedProx_mu1.0] best val AUC 0.7739 | {'optimizer': 'adam', 'lr_adam': 0.013712723599669366, 'local_epochs': 10, 'batch_size': 16, 'weight_decay': 0.07892657903676713}
+[I 2026-09-26 13:09:54,974] A new study created in Journal with name: federated_FedProx_muTuned
+[federated_FedProx_muTuned] best val AUC 0.7791 | {'optimizer': 'adam', 'lr_adam': 0.07129439007411074, 'local_epochs': 1, 'batch_size': 16, 'weight_decay': 0.08998522793041448, 'mu': 0.017313728464657275}

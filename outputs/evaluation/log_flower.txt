@@ -1,0 +1,473 @@
+INFO flwr 2026-09-26 16:01:21,981 | app.py:178 | Starting Flower simulation, config: ServerConfig(num_rounds=100, round_timeout=None)
+2026-09-26 16:01:25,038	INFO worker.py:1621 -- Started a local Ray instance.
+INFO flwr 2026-09-26 16:01:25,822 | app.py:213 | Flower VCE: Ray initialized with resources: {'memory': 7327331124.0, 'CPU': 8.0, 'node:__internal_head__': 1.0, 'object_store_memory': 2147483648.0, 'node:127.0.0.1': 1.0}
+INFO flwr 2026-09-26 16:01:25,822 | app.py:219 | Optimize your simulation with Flower VCE: https://flower.dev/docs/framework/how-to-run-simulations.html
+INFO flwr 2026-09-26 16:01:25,823 | app.py:242 | Flower VCE: Resources for each Virtual Client: {'num_cpus': 1}
+INFO flwr 2026-09-26 16:01:25,838 | app.py:288 | Flower VCE: Creating VirtualClientEngineActorPool with 8 actors
+INFO flwr 2026-09-26 16:01:25,843 | server.py:89 | Initializing global parameters
+INFO flwr 2026-09-26 16:01:25,843 | server.py:272 | Using initial parameters provided by strategy
+INFO flwr 2026-09-26 16:01:25,843 | server.py:91 | Evaluating initial parameters
+INFO flwr 2026-09-26 16:01:25,844 | server.py:104 | FL starting
+DEBUG flwr 2026-09-26 16:01:25,845 | server.py:222 | fit_round 1: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:01:47,636 | server.py:236 | fit_round 1 received 115 results and 0 failures
+WARNING flwr 2026-09-26 16:01:47,678 | fedavg.py:250 | No fit_metrics_aggregation_fn provided
+INFO flwr 2026-09-26 16:01:47,692 | server.py:125 | fit progress: (1, 0.0, {}, 21.84808341600001)
+INFO flwr 2026-09-26 16:01:47,693 | server.py:171 | evaluate_round 1: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:01:47,693 | server.py:222 | fit_round 2: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:02:06,416 | server.py:236 | fit_round 2 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:02:06,460 | server.py:125 | fit progress: (2, 0.0, {}, 40.61510299999645)
+INFO flwr 2026-09-26 16:02:06,460 | server.py:171 | evaluate_round 2: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:02:06,460 | server.py:222 | fit_round 3: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:02:23,404 | server.py:236 | fit_round 3 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:02:23,454 | server.py:125 | fit progress: (3, 0.0, {}, 57.60987620800006)
+INFO flwr 2026-09-26 16:02:23,455 | server.py:171 | evaluate_round 3: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:02:23,455 | server.py:222 | fit_round 4: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:02:37,809 | server.py:236 | fit_round 4 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:02:37,858 | server.py:125 | fit progress: (4, 0.0, {}, 72.01293350000196)
+INFO flwr 2026-09-26 16:02:37,858 | server.py:171 | evaluate_round 4: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:02:37,858 | server.py:222 | fit_round 5: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:02:51,488 | server.py:236 | fit_round 5 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:02:51,531 | server.py:125 | fit progress: (5, 0.0, {}, 85.68583258299623)
+INFO flwr 2026-09-26 16:02:51,531 | server.py:171 | evaluate_round 5: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:02:51,531 | server.py:222 | fit_round 6: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:03:05,374 | server.py:236 | fit_round 6 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:03:05,425 | server.py:125 | fit progress: (6, 0.0, {}, 99.57987895800034)
+INFO flwr 2026-09-26 16:03:05,425 | server.py:171 | evaluate_round 6: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:03:05,425 | server.py:222 | fit_round 7: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:03:20,810 | server.py:236 | fit_round 7 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:03:20,876 | server.py:125 | fit progress: (7, 0.0, {}, 115.0309260829963)
+INFO flwr 2026-09-26 16:03:20,876 | server.py:171 | evaluate_round 7: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:03:20,877 | server.py:222 | fit_round 8: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:03:35,701 | server.py:236 | fit_round 8 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:03:35,742 | server.py:125 | fit progress: (8, 0.0, {}, 129.89663233299507)
+INFO flwr 2026-09-26 16:03:35,742 | server.py:171 | evaluate_round 8: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:03:35,742 | server.py:222 | fit_round 9: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:03:49,238 | server.py:236 | fit_round 9 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:03:49,282 | server.py:125 | fit progress: (9, 0.0, {}, 143.43640104099904)
+INFO flwr 2026-09-26 16:03:49,282 | server.py:171 | evaluate_round 9: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:03:49,282 | server.py:222 | fit_round 10: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:04:03,237 | server.py:236 | fit_round 10 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:04:03,277 | server.py:125 | fit progress: (10, 0.0, {}, 157.43205487499654)
+INFO flwr 2026-09-26 16:04:03,278 | server.py:171 | evaluate_round 10: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:04:03,278 | server.py:222 | fit_round 11: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:04:17,793 | server.py:236 | fit_round 11 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:04:17,842 | server.py:125 | fit progress: (11, 0.0, {}, 171.99668395800109)
+INFO flwr 2026-09-26 16:04:17,842 | server.py:171 | evaluate_round 11: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:04:17,842 | server.py:222 | fit_round 12: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:04:31,791 | server.py:236 | fit_round 12 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:04:31,830 | server.py:125 | fit progress: (12, 0.0, {}, 185.98450062499614)
+INFO flwr 2026-09-26 16:04:31,830 | server.py:171 | evaluate_round 12: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:04:31,830 | server.py:222 | fit_round 13: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:04:46,132 | server.py:236 | fit_round 13 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:04:46,173 | server.py:125 | fit progress: (13, 0.0, {}, 200.32716524999705)
+INFO flwr 2026-09-26 16:04:46,174 | server.py:171 | evaluate_round 13: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:04:46,174 | server.py:222 | fit_round 14: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:05:01,854 | server.py:236 | fit_round 14 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:05:01,903 | server.py:125 | fit progress: (14, 0.0, {}, 216.05733541600057)
+INFO flwr 2026-09-26 16:05:01,903 | server.py:171 | evaluate_round 14: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:05:01,903 | server.py:222 | fit_round 15: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:05:18,899 | server.py:236 | fit_round 15 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:05:18,945 | server.py:125 | fit progress: (15, 0.0, {}, 233.09953358300118)
+INFO flwr 2026-09-26 16:05:18,946 | server.py:171 | evaluate_round 15: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:05:18,946 | server.py:222 | fit_round 16: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:05:35,506 | server.py:236 | fit_round 16 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:05:35,558 | server.py:125 | fit progress: (16, 0.0, {}, 249.71206625000195)
+INFO flwr 2026-09-26 16:05:35,558 | server.py:171 | evaluate_round 16: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:05:35,558 | server.py:222 | fit_round 17: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:05:52,809 | server.py:236 | fit_round 17 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:05:52,857 | server.py:125 | fit progress: (17, 0.0, {}, 267.0104724999983)
+INFO flwr 2026-09-26 16:05:52,857 | server.py:171 | evaluate_round 17: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:05:52,857 | server.py:222 | fit_round 18: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:06:10,418 | server.py:236 | fit_round 18 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:06:10,478 | server.py:125 | fit progress: (18, 0.0, {}, 284.6316936250005)
+INFO flwr 2026-09-26 16:06:10,478 | server.py:171 | evaluate_round 18: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:06:10,478 | server.py:222 | fit_round 19: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:06:28,831 | server.py:236 | fit_round 19 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:06:28,886 | server.py:125 | fit progress: (19, 0.0, {}, 303.03909991600085)
+INFO flwr 2026-09-26 16:06:28,886 | server.py:171 | evaluate_round 19: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:06:28,886 | server.py:222 | fit_round 20: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:06:49,049 | server.py:236 | fit_round 20 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:06:49,111 | server.py:125 | fit progress: (20, 0.0, {}, 323.2643976249965)
+INFO flwr 2026-09-26 16:06:49,111 | server.py:171 | evaluate_round 20: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:06:49,112 | server.py:222 | fit_round 21: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:07:03,848 | server.py:236 | fit_round 21 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:07:03,893 | server.py:125 | fit progress: (21, 0.0, {}, 338.0459866250021)
+INFO flwr 2026-09-26 16:07:03,893 | server.py:171 | evaluate_round 21: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:07:03,893 | server.py:222 | fit_round 22: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:07:18,165 | server.py:236 | fit_round 22 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:07:18,203 | server.py:125 | fit progress: (22, 0.0, {}, 352.356395666)
+INFO flwr 2026-09-26 16:07:18,203 | server.py:171 | evaluate_round 22: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:07:18,203 | server.py:222 | fit_round 23: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:07:34,749 | server.py:236 | fit_round 23 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:07:34,797 | server.py:125 | fit progress: (23, 0.0, {}, 368.9500257079999)
+INFO flwr 2026-09-26 16:07:34,797 | server.py:171 | evaluate_round 23: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:07:34,798 | server.py:222 | fit_round 24: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:07:52,951 | server.py:236 | fit_round 24 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:07:53,009 | server.py:125 | fit progress: (24, 0.0, {}, 387.16184020799847)
+INFO flwr 2026-09-26 16:07:53,009 | server.py:171 | evaluate_round 24: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:07:53,009 | server.py:222 | fit_round 25: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:08:09,670 | server.py:236 | fit_round 25 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:08:09,713 | server.py:125 | fit progress: (25, 0.0, {}, 403.86617933299567)
+INFO flwr 2026-09-26 16:08:09,713 | server.py:171 | evaluate_round 25: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:08:09,714 | server.py:222 | fit_round 26: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:08:24,811 | server.py:236 | fit_round 26 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:08:24,862 | server.py:125 | fit progress: (26, 0.0, {}, 419.01442804100225)
+INFO flwr 2026-09-26 16:08:24,862 | server.py:171 | evaluate_round 26: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:08:24,862 | server.py:222 | fit_round 27: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:08:39,524 | server.py:236 | fit_round 27 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:08:39,569 | server.py:125 | fit progress: (27, 0.0, {}, 433.722018708002)
+INFO flwr 2026-09-26 16:08:39,570 | server.py:171 | evaluate_round 27: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:08:39,570 | server.py:222 | fit_round 28: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:08:53,862 | server.py:236 | fit_round 28 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:08:53,906 | server.py:125 | fit progress: (28, 0.0, {}, 448.0585498750006)
+INFO flwr 2026-09-26 16:08:53,906 | server.py:171 | evaluate_round 28: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:08:53,906 | server.py:222 | fit_round 29: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:09:08,435 | server.py:236 | fit_round 29 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:09:08,471 | server.py:125 | fit progress: (29, 0.0, {}, 462.6231841659974)
+INFO flwr 2026-09-26 16:09:08,471 | server.py:171 | evaluate_round 29: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:09:08,471 | server.py:222 | fit_round 30: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:09:23,222 | server.py:236 | fit_round 30 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:09:23,272 | server.py:125 | fit progress: (30, 0.0, {}, 477.4245985000016)
+INFO flwr 2026-09-26 16:09:23,272 | server.py:171 | evaluate_round 30: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:09:23,273 | server.py:222 | fit_round 31: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:09:45,767 | server.py:236 | fit_round 31 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:09:45,817 | server.py:125 | fit progress: (31, 0.0, {}, 499.96882129099686)
+INFO flwr 2026-09-26 16:09:45,817 | server.py:171 | evaluate_round 31: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:09:45,817 | server.py:222 | fit_round 32: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:10:05,986 | server.py:236 | fit_round 32 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:10:06,041 | server.py:125 | fit progress: (32, 0.0, {}, 520.1925107499992)
+INFO flwr 2026-09-26 16:10:06,041 | server.py:171 | evaluate_round 32: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:10:06,041 | server.py:222 | fit_round 33: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:10:22,422 | server.py:236 | fit_round 33 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:10:22,467 | server.py:125 | fit progress: (33, 0.0, {}, 536.6192084159993)
+INFO flwr 2026-09-26 16:10:22,468 | server.py:171 | evaluate_round 33: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:10:22,468 | server.py:222 | fit_round 34: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:10:38,630 | server.py:236 | fit_round 34 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:10:38,674 | server.py:125 | fit progress: (34, 0.0, {}, 552.8259924579979)
+INFO flwr 2026-09-26 16:10:38,674 | server.py:171 | evaluate_round 34: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:10:38,675 | server.py:222 | fit_round 35: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:10:54,367 | server.py:236 | fit_round 35 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:10:54,410 | server.py:125 | fit progress: (35, 0.0, {}, 568.5612119579964)
+INFO flwr 2026-09-26 16:10:54,410 | server.py:171 | evaluate_round 35: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:10:54,410 | server.py:222 | fit_round 36: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:11:10,030 | server.py:236 | fit_round 36 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:11:10,073 | server.py:125 | fit progress: (36, 0.0, {}, 584.2244761659967)
+INFO flwr 2026-09-26 16:11:10,073 | server.py:171 | evaluate_round 36: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:11:10,073 | server.py:222 | fit_round 37: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:11:26,110 | server.py:236 | fit_round 37 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:11:26,152 | server.py:125 | fit progress: (37, 0.0, {}, 600.3036005409958)
+INFO flwr 2026-09-26 16:11:26,152 | server.py:171 | evaluate_round 37: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:11:26,153 | server.py:222 | fit_round 38: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:11:41,674 | server.py:236 | fit_round 38 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:11:41,719 | server.py:125 | fit progress: (38, 0.0, {}, 615.8702072500018)
+INFO flwr 2026-09-26 16:11:41,719 | server.py:171 | evaluate_round 38: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:11:41,719 | server.py:222 | fit_round 39: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:11:56,876 | server.py:236 | fit_round 39 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:11:56,918 | server.py:125 | fit progress: (39, 0.0, {}, 631.0691588749978)
+INFO flwr 2026-09-26 16:11:56,918 | server.py:171 | evaluate_round 39: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:11:56,918 | server.py:222 | fit_round 40: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:12:12,231 | server.py:236 | fit_round 40 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:12:12,277 | server.py:125 | fit progress: (40, 0.0, {}, 646.4275549160011)
+INFO flwr 2026-09-26 16:12:12,277 | server.py:171 | evaluate_round 40: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:12:12,277 | server.py:222 | fit_round 41: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:12:25,429 | server.py:236 | fit_round 41 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:12:25,463 | server.py:125 | fit progress: (41, 0.0, {}, 659.6143233330004)
+INFO flwr 2026-09-26 16:12:25,464 | server.py:171 | evaluate_round 41: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:12:25,464 | server.py:222 | fit_round 42: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:12:38,597 | server.py:236 | fit_round 42 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:12:38,633 | server.py:125 | fit progress: (42, 0.0, {}, 672.7839317079997)
+INFO flwr 2026-09-26 16:12:38,633 | server.py:171 | evaluate_round 42: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:12:38,633 | server.py:222 | fit_round 43: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:12:54,468 | server.py:236 | fit_round 43 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:12:54,522 | server.py:125 | fit progress: (43, 0.0, {}, 688.6724537909977)
+INFO flwr 2026-09-26 16:12:54,522 | server.py:171 | evaluate_round 43: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:12:54,522 | server.py:222 | fit_round 44: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:13:12,788 | server.py:236 | fit_round 44 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:13:12,834 | server.py:125 | fit progress: (44, 0.0, {}, 706.9848039579956)
+INFO flwr 2026-09-26 16:13:12,834 | server.py:171 | evaluate_round 44: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:13:12,835 | server.py:222 | fit_round 45: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:13:30,848 | server.py:236 | fit_round 45 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:13:30,896 | server.py:125 | fit progress: (45, 0.0, {}, 725.0463267500018)
+INFO flwr 2026-09-26 16:13:30,896 | server.py:171 | evaluate_round 45: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:13:30,896 | server.py:222 | fit_round 46: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:13:49,921 | server.py:236 | fit_round 46 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:13:49,974 | server.py:125 | fit progress: (46, 0.0, {}, 744.1241797080002)
+INFO flwr 2026-09-26 16:13:49,974 | server.py:171 | evaluate_round 46: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:13:49,974 | server.py:222 | fit_round 47: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:14:10,268 | server.py:236 | fit_round 47 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:14:10,339 | server.py:125 | fit progress: (47, 0.0, {}, 764.4894118329976)
+INFO flwr 2026-09-26 16:14:10,340 | server.py:171 | evaluate_round 47: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:14:10,340 | server.py:222 | fit_round 48: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:14:33,336 | server.py:236 | fit_round 48 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:14:33,418 | server.py:125 | fit progress: (48, 0.0, {}, 787.5678492079969)
+INFO flwr 2026-09-26 16:14:33,418 | server.py:171 | evaluate_round 48: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:14:33,418 | server.py:222 | fit_round 49: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:14:55,127 | server.py:236 | fit_round 49 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:14:55,178 | server.py:125 | fit progress: (49, 0.0, {}, 809.3273783330005)
+INFO flwr 2026-09-26 16:14:55,178 | server.py:171 | evaluate_round 49: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:14:55,178 | server.py:222 | fit_round 50: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:15:09,891 | server.py:236 | fit_round 50 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:15:09,928 | server.py:125 | fit progress: (50, 0.0, {}, 824.077942666001)
+INFO flwr 2026-09-26 16:15:09,929 | server.py:171 | evaluate_round 50: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:15:09,929 | server.py:222 | fit_round 51: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:15:22,311 | server.py:236 | fit_round 51 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:15:22,359 | server.py:125 | fit progress: (51, 0.0, {}, 836.5082393330013)
+INFO flwr 2026-09-26 16:15:22,359 | server.py:171 | evaluate_round 51: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:15:22,359 | server.py:222 | fit_round 52: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:15:37,639 | server.py:236 | fit_round 52 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:15:37,686 | server.py:125 | fit progress: (52, 0.0, {}, 851.835361999998)
+INFO flwr 2026-09-26 16:15:37,686 | server.py:171 | evaluate_round 52: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:15:37,686 | server.py:222 | fit_round 53: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:15:53,091 | server.py:236 | fit_round 53 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:15:53,131 | server.py:125 | fit progress: (53, 0.0, {}, 867.2800899159993)
+INFO flwr 2026-09-26 16:15:53,131 | server.py:171 | evaluate_round 53: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:15:53,131 | server.py:222 | fit_round 54: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:16:05,908 | server.py:236 | fit_round 54 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:16:05,946 | server.py:125 | fit progress: (54, 0.0, {}, 880.0947094160001)
+INFO flwr 2026-09-26 16:16:05,946 | server.py:171 | evaluate_round 54: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:16:05,946 | server.py:222 | fit_round 55: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:16:19,407 | server.py:236 | fit_round 55 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:16:19,446 | server.py:125 | fit progress: (55, 0.0, {}, 893.5950562910002)
+INFO flwr 2026-09-26 16:16:19,446 | server.py:171 | evaluate_round 55: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:16:19,446 | server.py:222 | fit_round 56: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:16:34,593 | server.py:236 | fit_round 56 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:16:34,641 | server.py:125 | fit progress: (56, 0.0, {}, 908.7903130409977)
+INFO flwr 2026-09-26 16:16:34,641 | server.py:171 | evaluate_round 56: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:16:34,642 | server.py:222 | fit_round 57: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:16:51,520 | server.py:236 | fit_round 57 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:16:51,571 | server.py:125 | fit progress: (57, 0.0, {}, 925.7199784999975)
+INFO flwr 2026-09-26 16:16:51,571 | server.py:171 | evaluate_round 57: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:16:51,571 | server.py:222 | fit_round 58: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:17:06,648 | server.py:236 | fit_round 58 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:17:06,697 | server.py:125 | fit progress: (58, 0.0, {}, 940.8457021249997)
+INFO flwr 2026-09-26 16:17:06,697 | server.py:171 | evaluate_round 58: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:17:06,697 | server.py:222 | fit_round 59: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:17:24,380 | server.py:236 | fit_round 59 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:17:24,439 | server.py:125 | fit progress: (59, 0.0, {}, 958.5873564159992)
+INFO flwr 2026-09-26 16:17:24,439 | server.py:171 | evaluate_round 59: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:17:24,439 | server.py:222 | fit_round 60: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:17:43,451 | server.py:236 | fit_round 60 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:17:43,509 | server.py:125 | fit progress: (60, 0.0, {}, 977.6570606659952)
+INFO flwr 2026-09-26 16:17:43,509 | server.py:171 | evaluate_round 60: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:17:43,509 | server.py:222 | fit_round 61: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:18:01,753 | server.py:236 | fit_round 61 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:18:01,810 | server.py:125 | fit progress: (61, 0.0, {}, 995.9586621249982)
+INFO flwr 2026-09-26 16:18:01,810 | server.py:171 | evaluate_round 61: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:18:01,811 | server.py:222 | fit_round 62: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:18:19,118 | server.py:236 | fit_round 62 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:18:19,162 | server.py:125 | fit progress: (62, 0.0, {}, 1013.3101738330006)
+INFO flwr 2026-09-26 16:18:19,162 | server.py:171 | evaluate_round 62: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:18:19,162 | server.py:222 | fit_round 63: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:18:37,489 | server.py:236 | fit_round 63 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:18:37,539 | server.py:125 | fit progress: (63, 0.0, {}, 1031.6865822499967)
+INFO flwr 2026-09-26 16:18:37,539 | server.py:171 | evaluate_round 63: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:18:37,539 | server.py:222 | fit_round 64: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:18:56,273 | server.py:236 | fit_round 64 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:18:56,321 | server.py:125 | fit progress: (64, 0.0, {}, 1050.4692194160016)
+INFO flwr 2026-09-26 16:18:56,321 | server.py:171 | evaluate_round 64: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:18:56,322 | server.py:222 | fit_round 65: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:19:10,476 | server.py:236 | fit_round 65 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:19:10,520 | server.py:125 | fit progress: (65, 0.0, {}, 1064.6679390829959)
+INFO flwr 2026-09-26 16:19:10,520 | server.py:171 | evaluate_round 65: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:19:10,520 | server.py:222 | fit_round 66: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:19:24,131 | server.py:236 | fit_round 66 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:19:24,169 | server.py:125 | fit progress: (66, 0.0, {}, 1078.316735458)
+INFO flwr 2026-09-26 16:19:24,169 | server.py:171 | evaluate_round 66: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:19:24,169 | server.py:222 | fit_round 67: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:19:38,963 | server.py:236 | fit_round 67 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:19:39,009 | server.py:125 | fit progress: (67, 0.0, {}, 1093.1564401659998)
+INFO flwr 2026-09-26 16:19:39,009 | server.py:171 | evaluate_round 67: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:19:39,009 | server.py:222 | fit_round 68: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:19:53,665 | server.py:236 | fit_round 68 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:19:53,712 | server.py:125 | fit progress: (68, 0.0, {}, 1107.8598767910007)
+INFO flwr 2026-09-26 16:19:53,713 | server.py:171 | evaluate_round 68: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:19:53,713 | server.py:222 | fit_round 69: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:20:07,759 | server.py:236 | fit_round 69 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:20:07,802 | server.py:125 | fit progress: (69, 0.0, {}, 1121.9491175829971)
+INFO flwr 2026-09-26 16:20:07,802 | server.py:171 | evaluate_round 69: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:20:07,802 | server.py:222 | fit_round 70: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:20:21,332 | server.py:236 | fit_round 70 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:20:21,372 | server.py:125 | fit progress: (70, 0.0, {}, 1135.5191642499994)
+INFO flwr 2026-09-26 16:20:21,372 | server.py:171 | evaluate_round 70: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:20:21,372 | server.py:222 | fit_round 71: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:20:34,537 | server.py:236 | fit_round 71 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:20:34,574 | server.py:125 | fit progress: (71, 0.0, {}, 1148.7216414159993)
+INFO flwr 2026-09-26 16:20:34,575 | server.py:171 | evaluate_round 71: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:20:34,575 | server.py:222 | fit_round 72: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:20:47,602 | server.py:236 | fit_round 72 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:20:47,642 | server.py:125 | fit progress: (72, 0.0, {}, 1161.789397708002)
+INFO flwr 2026-09-26 16:20:47,642 | server.py:171 | evaluate_round 72: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:20:47,643 | server.py:222 | fit_round 73: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:21:00,633 | server.py:236 | fit_round 73 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:21:00,674 | server.py:125 | fit progress: (73, 0.0, {}, 1174.8210857910017)
+INFO flwr 2026-09-26 16:21:00,674 | server.py:171 | evaluate_round 73: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:21:00,674 | server.py:222 | fit_round 74: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:21:13,554 | server.py:236 | fit_round 74 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:21:13,591 | server.py:125 | fit progress: (74, 0.0, {}, 1187.737412124996)
+INFO flwr 2026-09-26 16:21:13,591 | server.py:171 | evaluate_round 74: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:21:13,591 | server.py:222 | fit_round 75: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:21:26,231 | server.py:236 | fit_round 75 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:21:26,266 | server.py:125 | fit progress: (75, 0.0, {}, 1200.412512916002)
+INFO flwr 2026-09-26 16:21:26,266 | server.py:171 | evaluate_round 75: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:21:26,266 | server.py:222 | fit_round 76: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:21:40,449 | server.py:236 | fit_round 76 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:21:40,504 | server.py:125 | fit progress: (76, 0.0, {}, 1214.6507664579985)
+INFO flwr 2026-09-26 16:21:40,504 | server.py:171 | evaluate_round 76: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:21:40,504 | server.py:222 | fit_round 77: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:21:55,591 | server.py:236 | fit_round 77 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:21:55,632 | server.py:125 | fit progress: (77, 0.0, {}, 1229.7784225409996)
+INFO flwr 2026-09-26 16:21:55,632 | server.py:171 | evaluate_round 77: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:21:55,632 | server.py:222 | fit_round 78: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:22:09,508 | server.py:236 | fit_round 78 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:22:09,547 | server.py:125 | fit progress: (78, 0.0, {}, 1243.6936492909954)
+INFO flwr 2026-09-26 16:22:09,547 | server.py:171 | evaluate_round 78: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:22:09,547 | server.py:222 | fit_round 79: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:22:23,859 | server.py:236 | fit_round 79 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:22:23,905 | server.py:125 | fit progress: (79, 0.0, {}, 1258.0508635829974)
+INFO flwr 2026-09-26 16:22:23,905 | server.py:171 | evaluate_round 79: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:22:23,905 | server.py:222 | fit_round 80: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:22:38,465 | server.py:236 | fit_round 80 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:22:38,510 | server.py:125 | fit progress: (80, 0.0, {}, 1272.6561216659975)
+INFO flwr 2026-09-26 16:22:38,510 | server.py:171 | evaluate_round 80: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:22:38,510 | server.py:222 | fit_round 81: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:22:52,013 | server.py:236 | fit_round 81 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:22:52,053 | server.py:125 | fit progress: (81, 0.0, {}, 1286.1995884159987)
+INFO flwr 2026-09-26 16:22:52,054 | server.py:171 | evaluate_round 81: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:22:52,054 | server.py:222 | fit_round 82: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:23:05,147 | server.py:236 | fit_round 82 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:23:05,181 | server.py:125 | fit progress: (82, 0.0, {}, 1299.3270296659975)
+INFO flwr 2026-09-26 16:23:05,181 | server.py:171 | evaluate_round 82: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:23:05,181 | server.py:222 | fit_round 83: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:23:17,455 | server.py:236 | fit_round 83 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:23:17,488 | server.py:125 | fit progress: (83, 0.0, {}, 1311.633626791001)
+INFO flwr 2026-09-26 16:23:17,488 | server.py:171 | evaluate_round 83: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:23:17,488 | server.py:222 | fit_round 84: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:23:29,829 | server.py:236 | fit_round 84 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:23:29,862 | server.py:125 | fit progress: (84, 0.0, {}, 1324.0077044999998)
+INFO flwr 2026-09-26 16:23:29,862 | server.py:171 | evaluate_round 84: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:23:29,862 | server.py:222 | fit_round 85: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:23:42,531 | server.py:236 | fit_round 85 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:23:42,569 | server.py:125 | fit progress: (85, 0.0, {}, 1336.7151321249985)
+INFO flwr 2026-09-26 16:23:42,569 | server.py:171 | evaluate_round 85: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:23:42,570 | server.py:222 | fit_round 86: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:23:54,528 | server.py:236 | fit_round 86 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:23:54,570 | server.py:125 | fit progress: (86, 0.0, {}, 1348.7152847909965)
+INFO flwr 2026-09-26 16:23:54,570 | server.py:171 | evaluate_round 86: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:23:54,570 | server.py:222 | fit_round 87: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:24:07,631 | server.py:236 | fit_round 87 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:24:07,665 | server.py:125 | fit progress: (87, 0.0, {}, 1361.8107669160017)
+INFO flwr 2026-09-26 16:24:07,665 | server.py:171 | evaluate_round 87: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:24:07,665 | server.py:222 | fit_round 88: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:24:19,823 | server.py:236 | fit_round 88 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:24:19,857 | server.py:125 | fit progress: (88, 0.0, {}, 1374.0022323750018)
+INFO flwr 2026-09-26 16:24:19,857 | server.py:171 | evaluate_round 88: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:24:19,857 | server.py:222 | fit_round 89: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:24:32,295 | server.py:236 | fit_round 89 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:24:32,333 | server.py:125 | fit progress: (89, 0.0, {}, 1386.47825475)
+INFO flwr 2026-09-26 16:24:32,333 | server.py:171 | evaluate_round 89: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:24:32,333 | server.py:222 | fit_round 90: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:24:44,269 | server.py:236 | fit_round 90 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:24:44,301 | server.py:125 | fit progress: (90, 0.0, {}, 1398.4464509159952)
+INFO flwr 2026-09-26 16:24:44,301 | server.py:171 | evaluate_round 90: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:24:44,301 | server.py:222 | fit_round 91: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:24:55,852 | server.py:236 | fit_round 91 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:24:55,884 | server.py:125 | fit progress: (91, 0.0, {}, 1410.028915666)
+INFO flwr 2026-09-26 16:24:55,884 | server.py:171 | evaluate_round 91: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:24:55,884 | server.py:222 | fit_round 92: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:25:07,681 | server.py:236 | fit_round 92 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:25:07,726 | server.py:125 | fit progress: (92, 0.0, {}, 1421.8706470409961)
+INFO flwr 2026-09-26 16:25:07,726 | server.py:171 | evaluate_round 92: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:25:07,726 | server.py:222 | fit_round 93: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:25:20,059 | server.py:236 | fit_round 93 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:25:20,094 | server.py:125 | fit progress: (93, 0.0, {}, 1434.2385516659997)
+INFO flwr 2026-09-26 16:25:20,094 | server.py:171 | evaluate_round 93: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:25:20,094 | server.py:222 | fit_round 94: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:25:33,330 | server.py:236 | fit_round 94 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:25:33,372 | server.py:125 | fit progress: (94, 0.0, {}, 1447.5172307079993)
+INFO flwr 2026-09-26 16:25:33,372 | server.py:171 | evaluate_round 94: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:25:33,373 | server.py:222 | fit_round 95: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:25:45,990 | server.py:236 | fit_round 95 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:25:46,026 | server.py:125 | fit progress: (95, 0.0, {}, 1460.1711323330019)
+INFO flwr 2026-09-26 16:25:46,026 | server.py:171 | evaluate_round 95: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:25:46,027 | server.py:222 | fit_round 96: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:25:58,465 | server.py:236 | fit_round 96 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:25:58,501 | server.py:125 | fit progress: (96, 0.0, {}, 1472.645709874996)
+INFO flwr 2026-09-26 16:25:58,501 | server.py:171 | evaluate_round 96: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:25:58,501 | server.py:222 | fit_round 97: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:26:11,051 | server.py:236 | fit_round 97 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:26:11,088 | server.py:125 | fit progress: (97, 0.0, {}, 1485.2328909999997)
+INFO flwr 2026-09-26 16:26:11,088 | server.py:171 | evaluate_round 97: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:26:11,089 | server.py:222 | fit_round 98: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:26:23,389 | server.py:236 | fit_round 98 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:26:23,428 | server.py:125 | fit progress: (98, 0.0, {}, 1497.5729461660012)
+INFO flwr 2026-09-26 16:26:23,429 | server.py:171 | evaluate_round 98: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:26:23,429 | server.py:222 | fit_round 99: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:26:35,614 | server.py:236 | fit_round 99 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:26:35,647 | server.py:125 | fit progress: (99, 0.0, {}, 1509.7909471250023)
+INFO flwr 2026-09-26 16:26:35,647 | server.py:171 | evaluate_round 99: no clients selected, cancel
+DEBUG flwr 2026-09-26 16:26:35,647 | server.py:222 | fit_round 100: strategy sampled 115 clients (out of 1159)
+DEBUG flwr 2026-09-26 16:26:48,031 | server.py:236 | fit_round 100 received 115 results and 0 failures
+INFO flwr 2026-09-26 16:26:48,068 | server.py:125 | fit progress: (100, 0.0, {}, 1522.2122897079971)
+INFO flwr 2026-09-26 16:26:48,068 | server.py:171 | evaluate_round 100: no clients selected, cancel
+INFO flwr 2026-09-26 16:26:48,068 | server.py:153 | FL finished in 1522.212407291001
+INFO flwr 2026-09-26 16:26:48,068 | app.py:226 | app_fit: losses_distributed []
+INFO flwr 2026-09-26 16:26:48,068 | app.py:227 | app_fit: metrics_distributed_fit {}
+INFO flwr 2026-09-26 16:26:48,068 | app.py:228 | app_fit: metrics_distributed {}
+INFO flwr 2026-09-26 16:26:48,068 | app.py:229 | app_fit: losses_centralized [(1, 0.0), (2, 0.0), (3, 0.0), (4, 0.0), (5, 0.0), (6, 0.0), (7, 0.0), (8, 0.0), (9, 0.0), (10, 0.0), (11, 0.0), (12, 0.0), (13, 0.0), (14, 0.0), (15, 0.0), (16, 0.0), (17, 0.0), (18, 0.0), (19, 0.0), (20, 0.0), (21, 0.0), (22, 0.0), (23, 0.0), (24, 0.0), (25, 0.0), (26, 0.0), (27, 0.0), (28, 0.0), (29, 0.0), (30, 0.0), (31, 0.0), (32, 0.0), (33, 0.0), (34, 0.0), (35, 0.0), (36, 0.0), (37, 0.0), (38, 0.0), (39, 0.0), (40, 0.0), (41, 0.0), (42, 0.0), (43, 0.0), (44, 0.0), (45, 0.0), (46, 0.0), (47, 0.0), (48, 0.0), (49, 0.0), (50, 0.0), (51, 0.0), (52, 0.0), (53, 0.0), (54, 0.0), (55, 0.0), (56, 0.0), (57, 0.0), (58, 0.0), (59, 0.0), (60, 0.0), (61, 0.0), (62, 0.0), (63, 0.0), (64, 0.0), (65, 0.0), (66, 0.0), (67, 0.0), (68, 0.0), (69, 0.0), (70, 0.0), (71, 0.0), (72, 0.0), (73, 0.0), (74, 0.0), (75, 0.0), (76, 0.0), (77, 0.0), (78, 0.0), (79, 0.0), (80, 0.0), (81, 0.0), (82, 0.0), (83, 0.0), (84, 0.0), (85, 0.0), (86, 0.0), (87, 0.0), (88, 0.0), (89, 0.0), (90, 0.0), (91, 0.0), (92, 0.0), (93, 0.0), (94, 0.0), (95, 0.0), (96, 0.0), (97, 0.0), (98, 0.0), (99, 0.0), (100, 0.0)]
+INFO flwr 2026-09-26 16:26:48,068 | app.py:230 | app_fit: metrics_centralized {}
+{'seed': 42, 'rounds': 100, 'max_abs_diff_test_auc': 6.919862806531452e-05, 'mean_abs_diff_test_auc': 1.524699417419062e-05, 'final_test_auc_flower': 0.6823466098662647, 'final_test_auc_sim': 0.6823671959232571}
+INFO flwr 2026-09-26 16:26:58,255 | app.py:178 | Starting Flower simulation, config: ServerConfig(num_rounds=100, round_timeout=None)
+2026-09-26 16:27:01,433	INFO worker.py:1621 -- Started a local Ray instance.
+INFO flwr 2026-09-26 16:27:01,821 | app.py:213 | Flower VCE: Ray initialized with resources: {'object_store_memory': 2147483648.0, 'node:127.0.0.1': 1.0, 'CPU': 8.0, 'node:__internal_head__': 1.0, 'memory': 8443926938.0}
+INFO flwr 2026-09-26 16:27:01,821 | app.py:219 | Optimize your simulation with Flower VCE: https://flower.dev/docs/framework/how-to-run-simulations.html
+INFO flwr 2026-09-26 16:27:01,821 | app.py:242 | Flower VCE: Resources for each Virtual Client: {'num_cpus': 1}
+INFO flwr 2026-09-26 16:27:01,827 | app.py:288 | Flower VCE: Creating VirtualClientEngineActorPool with 8 actors
+INFO flwr 2026-09-26 16:27:01,830 | server.py:89 | Initializing global parameters
+INFO flwr 2026-09-26 16:27:01,830 | server.py:272 | Using initial parameters provided by strategy
+INFO flwr 2026-09-26 16:27:01,830 | server.py:91 | Evaluating initial parameters
+INFO flwr 2026-09-26 16:27:01,830 | server.py:104 | FL starting
+DEBUG flwr 2026-09-26 16:27:01,831 | server.py:222 | fit_round 1: strategy sampled 115 clients (out of 1159)
+*** SIGTERM received at time=1790450834 ***
+PC: @        0x18436c50c  (unknown)  __psynch_cvwait
+    @        0x12a8f4bb8  (unknown)  absl::lts_20220623::WriteFailureInfo()
+    @        0x12a8f4904  (unknown)  absl::lts_20220623::AbslFailureSignalHandler()
+    @        0x1843b8144  (unknown)  _sigtramp
+    @        0x1843ae1d0  (unknown)  _pthread_cond_wait
+    @        0x1019dc884  (unknown)  PyThread_acquire_lock_timed
+    @        0x101a3a5ec  (unknown)  acquire_timed
+    @        0x101a3a7bc  (unknown)  lock_PyThread_acquire_lock
+    @        0x1018b3b3c  (unknown)  method_vectorcall_VARARGS_KEYWORDS
+    @        0x101980bd0  (unknown)  _PyEval_EvalFrameDefault
+    @        0x10197a8ac  (unknown)  PyEval_EvalCode
+    @        0x1019ce8ac  (unknown)  run_eval_code_obj
+    @        0x1019ce810  (unknown)  run_mod
+    @        0x1019ce650  (unknown)  pyrun_file
+    @        0x1019ce0a0  (unknown)  _PyRun_SimpleFileObject
+    @        0x1019cda2c  (unknown)  _PyRun_AnyFileObject
+    @        0x1019ea254  (unknown)  pymain_run_file_obj
+    @        0x1019e9b98  (unknown)  pymain_run_file
+    @        0x1019e9460  (unknown)  Py_RunMain
+    @        0x1019ea5c8  (unknown)  Py_BytesMain
+    @        0x183fd7e80  (unknown)  start
+[2026-09-26 16:27:14,681 E 78779 1820625] logging.cc:361: *** SIGTERM received at time=1790450834 ***
+[2026-09-26 16:27:14,681 E 78779 1820625] logging.cc:361: PC: @        0x18436c50c  (unknown)  __psynch_cvwait
+[2026-09-26 16:27:14,681 E 78779 1820625] logging.cc:361:     @        0x12a8f4bb8  (unknown)  absl::lts_20220623::WriteFailureInfo()
+[2026-09-26 16:27:14,681 E 78779 1820625] logging.cc:361:     @        0x12a8f491c  (unknown)  absl::lts_20220623::AbslFailureSignalHandler()
+[2026-09-26 16:27:14,681 E 78779 1820625] logging.cc:361:     @        0x1843b8144  (unknown)  _sigtramp
+[2026-09-26 16:27:14,681 E 78779 1820625] logging.cc:361:     @        0x1843ae1d0  (unknown)  _pthread_cond_wait
+[2026-09-26 16:27:14,681 E 78779 1820625] logging.cc:361:     @        0x1019dc884  (unknown)  PyThread_acquire_lock_timed
+[2026-09-26 16:27:14,681 E 78779 1820625] logging.cc:361:     @        0x101a3a5ec  (unknown)  acquire_timed
+[2026-09-26 16:27:14,681 E 78779 1820625] logging.cc:361:     @        0x101a3a7bc  (unknown)  lock_PyThread_acquire_lock
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x1018b3b3c  (unknown)  method_vectorcall_VARARGS_KEYWORDS
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x101980bd0  (unknown)  _PyEval_EvalFrameDefault
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x10197a8ac  (unknown)  PyEval_EvalCode
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x1019ce8ac  (unknown)  run_eval_code_obj
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x1019ce810  (unknown)  run_mod
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x1019ce650  (unknown)  pyrun_file
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x1019ce0a0  (unknown)  _PyRun_SimpleFileObject
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x1019cda2c  (unknown)  _PyRun_AnyFileObject
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x1019ea254  (unknown)  pymain_run_file_obj
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x1019e9b98  (unknown)  pymain_run_file
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x1019e9460  (unknown)  Py_RunMain
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x1019ea5c8  (unknown)  Py_BytesMain
+[2026-09-26 16:27:14,682 E 78779 1820625] logging.cc:361:     @        0x183fd7e80  (unknown)  start
