@@ -40,27 +40,23 @@ The complete results are in `outputs/REPORT.md` and `outputs/REPORT_ablation.md`
 
 ## Where each result of the manuscript comes from
 
-Tables and figures are not versioned: `run_all.sh` writes them to
-`outputs/latex/` and `outputs/figures/` (PDF, and PNG at 300 dpi). The numbers
-they contain are all in the versioned files of `outputs/` (`analysis.json`,
-`ablation_analysis.json`, `REPORT.md`, `REPORT_ablation.md` and the per-seed
-results in `outputs/evaluation/`).
+Each table and figure of the manuscript is built from the versioned files below.
 
-| Manuscript item | Produced by | Generated file |
+| Manuscript item | Produced by | Data in this repository |
 |---|---|---|
-| Table 1 (cohort) | `01_prepare_data.py`, `32_latex_tables.py` | `outputs/latex/tab_cohort.tex` |
-| Table 2 (test-set performance) | `20`–`22_eval_*.py`, `30_analysis.py`, `32_latex_tables.py` | `outputs/latex/tab_main.tex` |
-| Table 3 (ablation) | `24_ablation.py`, `33_ablation_analysis.py` | `outputs/latex/tab_ablation.tex` |
-| Table 4 (FedAvg vs FedProx) | `30_analysis.py`, `32_latex_tables.py` | `outputs/latex/tab_strategies.tex` |
-| Table 5, Appendix A (search spaces) | `10`–`12_tune_*.py`, `32_latex_tables.py` | `outputs/latex/tab_search.tex` |
-| Table 6, Appendix B (cost of federation) | `30_analysis.py`, `32_latex_tables.py` | `outputs/latex/tab_decomposition.tex` |
-| Table 7, Appendix B (communication budget) | `30_analysis.py`, `32_latex_tables.py` | `outputs/latex/tab_budget.tex` |
-| Figure 3 (local optimizer in the searches) | `31_figures.py` | `outputs/figures/fig_optuna_optimizer.pdf` |
-| Figure 4 (test AUC and balanced accuracy) | `31_figures.py` | `outputs/figures/fig_forest.pdf` |
-| Figure 5 (trajectories per round) | `31_figures.py` | `outputs/figures/fig_convergence.pdf` |
+| Table 1 (cohort) | `01_prepare_data.py` | `data/processed_meta.json` |
+| Table 2 (test-set performance) | `20`–`22_eval_*.py`, `30_analysis.py` | `outputs/analysis.json` (`summary`, `trivial`); per seed in `outputs/evaluation/*.json` |
+| Table 3 (ablation) | `24_ablation.py`, `33_ablation_analysis.py` | `outputs/ablation_analysis.json`, `outputs/REPORT_ablation.md`; per seed in `outputs/evaluation/ablation.json` |
+| Table 4 (FedAvg vs FedProx) | `30_analysis.py` | `outputs/analysis.json` (`strategy_comparisons`) |
+| Table 5, Appendix A (search spaces and selections) | `10`–`12_tune_*.py` | `outputs/tuning/*_best.json`, `outputs/tuning/*_trials.csv` |
+| Table 6, Appendix B (cost of federation) | `30_analysis.py` | `outputs/analysis.json` (`decomposition`) |
+| Table 7, Appendix B (communication budget) | `30_analysis.py` | `outputs/evaluation/fl_budget_sensitivity.csv` |
+| Figure 3 (local optimizer in the searches) | `10`–`12_tune_*.py` | `outputs/analysis.json` (`tuning`: best value per optimizer, fANOVA importances) |
+| Figure 4 (test AUC and balanced accuracy) | `20`–`22_eval_*.py` | `outputs/evaluation/*.json` (per seed) |
+| Figure 5 (trajectories per round) | `22_eval_federated.py` | `outputs/evaluation/fl_rounds.csv.gz` (every round of every run) |
 | Embedding norms (Section 5.4) | `25_embedding_diagnostic.py` | `outputs/embedding_diagnostic.json` |
 | Leave-one-out leakage (Section 4.2) | `03_loo_leakage_diagnostic.py` | `outputs/evaluation/loo_leakage_diagnostic.json` |
-| Verification against Flower (Section 5.8) | `23_flower_crosscheck.py` | `outputs/evaluation/flower_crosscheck*.{json,csv}` |
+| Verification against Flower (Section 5.8) | `23_flower_crosscheck.py` | `outputs/evaluation/flower_crosscheck.json`, `flower_crosscheck_seed42.csv` |
 
 Figures 1 (feature and label windows) and 2 (data flow of the federated
 recommender) are diagrams drawn in the manuscript source and contain no data.
@@ -73,9 +69,7 @@ pip install -r requirements.txt
 PY=python ./run_all.sh
 ```
 
-To regenerate only the tables and figures from the versioned outputs, without
-re-training, run `python 31_figures.py && python 32_latex_tables.py && python
-33_ablation_analysis.py`. The full run takes about five
+The full run takes about five
 hours on a 10-core laptop (CPU only). Evaluation is deterministic: the client
 sample of every round and the random state of every local update are functions
 of the seed, the round and the client, so re-running a condition reproduces
@@ -94,7 +88,7 @@ selected configurations can be inspected or reused.
 | `01`–`03` | Data preparation, learning-free references, leakage diagnostic |
 | `10`–`12` | Optuna studies (XGBoost, centralized recommender, one per federated strategy) |
 | `20`–`25` | Evaluation over 10 seeds, Flower verification, ablation, embedding diagnostic |
-| `30`–`33` | Statistical analysis, figures, LaTeX tables, ablation analysis |
+| `30`–`33` | Statistical analysis, ablation analysis, and the plotting and table-formatting code of the manuscript |
 | `outputs/tuning/` | Optuna journals, trials and selected configurations |
 | `outputs/evaluation/` | Per-seed results, per-round logs, test predictions of every model |
 | `data/raw/` | Original ASSISTments 2009–2010 skill-builder file (compressed) |
