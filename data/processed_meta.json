@@ -1,0 +1,61 @@
+{
+  "raw_sha256": "162ef8d2d28bcbfea6591a282994062bd8d5eaa00636544292a0d268dca6e5da",
+  "raw_rows": 346860,
+  "valid_rows": 283105,
+  "filtered_interactions": 234294,
+  "num_users": 1159,
+  "num_skills": 121,
+  "train_windows": [
+    [
+      0.4,
+      0.6
+    ],
+    [
+      0.6,
+      0.8
+    ]
+  ],
+  "train_fraction": 0.8,
+  "train_examples_per_window": [
+    9411,
+    10165
+  ],
+  "val_fraction": 0.1,
+  "success_threshold": 0.7,
+  "split_seed": 42,
+  "n_train_examples": 19576,
+  "n_fit_examples": 17669,
+  "n_val_examples": 1907,
+  "n_test_examples": 9575,
+  "positive_rate": {
+    "fit": 0.6626860603316543,
+    "val": 0.6528578919769271,
+    "test": 0.6434464751958224
+  },
+  "seen_pair_share": {
+    "train": 0.4378831221904373,
+    "test": 0.5030809399477807
+  },
+  "cold_start": {
+    "train": 3,
+    "test": 0
+  },
+  "clients_with_fit_examples": 1159,
+  "fit_examples_per_client": {
+    "min": 1,
+    "median": 9.0,
+    "max": 94
+  },
+  "history_prior": {
+    "train": [
+      0.6697744552520919,
+      0.6710927419926555
+    ],
+    "test": 0.6723629590207557
+  },
+  "ordering_validation": {
+    "mean_spearman": 1.0,
+    "pct_pairs_rho_ge_0.99": 1.0,
+    "n_pairs": 20030
+  }
+}

@@ -2,5 +2,10 @@
 __pycache__/
 *.pyc
 .DS_Store
-data/*
-!data/.gitkeep
+
+# generated locally by 31_figures.py / 32_latex_tables.py / 33_ablation_analysis.py; not versioned
+outputs/figures/
+outputs/latex/
+
+# the raw file is versioned compressed (data/raw/*.csv.gz); run_all.sh decompresses it
+data/raw/*.csv

@@ -6,10 +6,17 @@ cd "$(dirname "$0")"
 PY=${PY:-python}
 export PYTHONWARNINGS=ignore
 
-if [ ! -f data/raw/skill_builder_data_corrected_collapsed.csv ]; then
+# Raw ASSISTments file: shipped compressed in data/raw/; downloaded from the
+# original distribution only if the compressed copy is missing. Step 01 verifies
+# the SHA-256 of the uncompressed file either way.
+RAW=data/raw/skill_builder_data_corrected_collapsed.csv
+if [ ! -f "$RAW" ]; then
   mkdir -p data/raw
-  curl -sL "$($PY -c 'import config; print(config.RAW_URL)')" \
-       -o data/raw/skill_builder_data_corrected_collapsed.csv
+  if [ -f "$RAW.gz" ]; then
+    gzip -dc "$RAW.gz" > "$RAW"
+  else
+    curl -sL "$($PY -c 'import config; print(config.RAW_URL)')" -o "$RAW"
+  fi
 fi
 
 $PY 01_prepare_data.py            # verifies SHA-256, builds leakage-free examples

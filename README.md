@@ -3,7 +3,8 @@
 Reproducibility package for the manuscript of the same title (anonymized for
 double-blind review). Every number, table and data figure in the manuscript is
 produced by `run_all.sh`, starting from the raw ASSISTments 2009–2010
-skill-builder file.
+skill-builder file, which is included in `data/raw/` together with the
+examples produced by the pipeline.
 
 ## What the study does
 
@@ -39,7 +40,13 @@ The complete results are in `outputs/REPORT.md` and `outputs/REPORT_ablation.md`
 
 ## Where each result of the manuscript comes from
 
-| Manuscript item | Produced by | File |
+Tables and figures are not versioned: `run_all.sh` writes them to
+`outputs/latex/` and `outputs/figures/` (PDF, and PNG at 300 dpi). The numbers
+they contain are all in the versioned files of `outputs/` (`analysis.json`,
+`ablation_analysis.json`, `REPORT.md`, `REPORT_ablation.md` and the per-seed
+results in `outputs/evaluation/`).
+
+| Manuscript item | Produced by | Generated file |
 |---|---|---|
 | Table 1 (cohort) | `01_prepare_data.py`, `32_latex_tables.py` | `outputs/latex/tab_cohort.tex` |
 | Table 2 (test-set performance) | `20`–`22_eval_*.py`, `30_analysis.py`, `32_latex_tables.py` | `outputs/latex/tab_main.tex` |
@@ -66,9 +73,9 @@ pip install -r requirements.txt
 PY=python ./run_all.sh
 ```
 
-The raw file (`skill_builder_data_corrected_collapsed.csv`) is downloaded from
-the ASSISTments project's public distribution and verified against the SHA-256
-in `config.py`; it is not redistributed here. The full run takes about five
+To regenerate only the tables and figures from the versioned outputs, without
+re-training, run `python 31_figures.py && python 32_latex_tables.py && python
+33_ablation_analysis.py`. The full run takes about five
 hours on a 10-core laptop (CPU only). Evaluation is deterministic: the client
 sample of every round and the random state of every local update are functions
 of the seed, the round and the client, so re-running a condition reproduces
@@ -90,7 +97,8 @@ selected configurations can be inspected or reused.
 | `30`–`33` | Statistical analysis, figures, LaTeX tables, ablation analysis |
 | `outputs/tuning/` | Optuna journals, trials and selected configurations |
 | `outputs/evaluation/` | Per-seed results, per-round logs, test predictions of every model |
-| `outputs/figures/`, `outputs/latex/` | Figures (PDF, PNG at 300 dpi) and tables used in the manuscript |
+| `data/raw/` | Original ASSISTments 2009–2010 skill-builder file (compressed) |
+| `data/processed_*.csv`, `data/processed_meta.json` | Examples produced by `01_prepare_data.py` and cohort statistics |
 
 ## Design decisions that matter for interpretation
 
@@ -114,7 +122,31 @@ selected configurations can be inspected or reused.
   `23_flower_crosscheck.py` reruns tuned FedAvg in Flower 1.7 (seed 42, 100
   rounds): per-round test AUC differs from the simulator by at most 7e-5.
 
+## Data
+
+- `data/raw/skill_builder_data_corrected_collapsed.csv.gz`: the ASSISTments
+  2009–2010 skill-builder data, "corrected, collapsed" version, as publicly
+  distributed by the ASSISTments project (Feng, Heffernan & Koedinger, 2009,
+  *User Modeling and User-Adapted Interaction*, 19(3), 243–266). It is gzip-
+  compressed only; `run_all.sh` decompresses it, and `01_prepare_data.py`
+  verifies the SHA-256 of the uncompressed file
+  (`162ef8d2d28bcbfea6591a282994062bd8d5eaa00636544292a0d268dca6e5da`). If the
+  compressed copy is absent, `run_all.sh` downloads the file from the original
+  distribution.
+- `data/processed_train.csv`, `data/processed_test.csv`: the leakage-free
+  (student, skill) examples after filtering (1,159 students, 121 skills; 19,576
+  training examples, of which 1,907 form the validation split, and 9,575 test
+  examples). Columns: re-indexed student and skill identifiers, the three
+  aggregate features (min–max scaled on training data), the target success
+  rate and its binarized value (threshold 0.70), flags for pairs already seen
+  in the student's history and for cold-start students, the validation flag
+  and the window.
+- `data/processed_meta.json`: cohort statistics reported in Table 1.
+
+The data are de-identified by their distributors (numeric student, class,
+teacher and school identifiers) and contain no directly identifying information.
+
 ## License
 
-Code: MIT (see `LICENSE`). The ASSISTments data are distributed by their
-original authors under their own terms and are not included in this repository.
+Code: MIT (see `LICENSE`). The ASSISTments data remain subject to the terms of
+their original distributors, who should be cited in any use.
