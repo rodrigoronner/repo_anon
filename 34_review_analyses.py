@@ -181,16 +181,16 @@ with open(os.path.join(OUT_DIR, "REPORT_review.md"), "w") as fh:
 print("\n".join(L))
 
 # LaTeX table: global vs per-student AUC and agreement with the centralized recommender -------------
-ROWS = [("skill_history_mean", "Skill history mean (no model)"),
-        ("xgboost", "XGBoost, centralized"), ("cdnn_tuned", "Recommender, centralized"),
+ROWS = [("skill_history_mean", "Skill history mean"),
+        ("xgboost", "XGBoost, centralized"), ("cdnn_tuned", "DNN, centralized"),
         ("clr_tuned", "Logistic regression, centralized"),
-        ("fl_FedAvg", "Recommender, FedAvg"), ("fl_FedProx_mu0.1", r"Recommender, FedProx $\mu=0.1$"),
-        ("fl_FedProx_mu0.5", r"Recommender, FedProx $\mu=0.5$"), ("fl_FedProx_mu1.0", r"Recommender, FedProx $\mu=1.0$"),
-        ("fl_FedProx_muTuned", r"Recommender, FedProx, $\mu$ tuned"),
-        ("fl_FedAvg_rowwise_samecfg", "Recommender, FedAvg, row-wise (FedAvg config.)"),
-        ("fl_FedAvg_rowwise", "Recommender, FedAvg, row-wise (tuned)"),
+        ("fl_FedAvg", "FedAvg"), ("fl_FedProx_mu0.1", r"FedProx $\mu=0.1$"),
+        ("fl_FedProx_mu0.5", r"FedProx $\mu=0.5$"), ("fl_FedProx_mu1.0", r"FedProx $\mu=1.0$"),
+        ("fl_FedProx_muTuned", r"FedProx, $\mu$ tuned"),
+        ("fl_FedAvg_rowwise_samecfg", "FedAvg, row-wise (FedAvg config.)"),
+        ("fl_FedAvg_rowwise", "FedAvg, row-wise (tuned)"),
         ("fl_LogReg", "Logistic regression, FedAvg"),
-        ("fl_FedAvg_v1protocol", "Recommender, FedAvg, preliminary config.")]
+        ("fl_FedAvg_v1protocol", "FedAvg, preliminary config.")]
 
 
 def pm(x, sd=True):
@@ -205,7 +205,7 @@ for k, lab in ROWS:
     lines.append(f"{lab} & {pm(m['global_auc'])} & {pm(m['per_student_auc'])} & {agree} \\\\")
 tex = (r"""\begin{table*}[ht]
 \centering
-\caption{Global and per-student ROC AUC on the test set (mean $\pm$ SD over 10 seeds), and agreement of federated models with the centralized recommender. Per-student AUC is computed within each of the """ + str(out["n_students_eligible"]) + r""" students with both outcomes in the test window and averaged; it measures how well a model orders the skills of one student. Agreement uses seed-averaged scores: median within-student Spearman correlation, and share of students for whom both models rank the same skill first. Data: own experiments.}
+\caption{Global and per-student ROC AUC on the test set (mean $\pm$ SD over 10 seeds), and agreement of federated models with the centralized DNN. Per-student AUC is computed within each of the """ + str(out["n_students_eligible"]) + r""" students with both outcomes in the test window and averaged; it measures how well a model orders the skills of one student. Agreement uses seed-averaged scores: median within-student Spearman correlation, and share of students for whom both models rank the same skill first. Data: own experiments.}
 \label{tab:perstudent}
 \begin{tblr}{
     colspec = {X[2.6,l] X[1.2,c] X[1.2,c] X[1.1,c] X[1,c]},
@@ -213,7 +213,7 @@ tex = (r"""\begin{table*}[ht]
     row{1}  = {font=\small\bfseries},
     }
 \toprule
-Model & Global AUC & Per-student AUC & Spearman with centralized & Same top skill \\
+Model & Global AUC & Per-student AUC & Spearman with centralized DNN & Same top skill \\
 \midrule
 """ + "\n".join(lines) + "\n" + r"""\bottomrule
 \end{tblr}

@@ -104,10 +104,11 @@ EXTRA_STUDIES = [("federated_FedAvg_rowwise", "FedAvg, row-wise aggregation"),
                  ("federated_LogReg", "Logistic regression, FedAvg"),
                  ("centralized_logreg", "Logistic regression, centralized")]
 if all(os.path.exists(os.path.join(OUT_DIR, "tuning", f"{n}_best.json")) for n, _ in EXTRA_STUDIES):
-    rows.append([r"\SetCell[c=3]{l}\textit{Added conditions} (same search space; 100 trials for centralized logistic "
-                 r"regression)", "", ""])
+    rows.append([r"\SetCell[c=3]{l}\textit{Added conditions} (search spaces as above)", "", ""])
     for n, lab in EXTRA_STUDIES:
-        p = read(os.path.join(OUT_DIR, "tuning", f"{n}_best.json"))["best_params"]
+        best = read(os.path.join(OUT_DIR, "tuning", f"{n}_best.json"))
+        p = best["best_params"]
+        lab = f"{lab} ({best['n_trials']} trials)"
         opt = "Adam" if p["optimizer"] == "adam" else "SGD"
         parts = [f"{opt}, lr {p.get('lr_adam', p.get('lr_sgd')):.4f}"]
         if "local_epochs" in p:
