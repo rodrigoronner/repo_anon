@@ -119,7 +119,7 @@ table("tab:search", "Optuna search spaces (TPE sampler, validation AUC objective
       "Federated space: local optimizer \\{SGD, Adam\\} with the learning-rate ranges of the centralized search "
       "(Adam up to $10^{-1}$), local epochs $E\\in\\{1,2,5,10\\}$, batch size $B\\in\\{16,32,64\\}$, weight decay "
       "$10^{-7}$--$10^{-1}$, and $\\mu\\in[10^{-3},1]$ (log) for the tuned-$\\mu$ condition. Data: own experiments.",
-      "p{0.30\\textwidth} p{0.34\\textwidth} X", ["Hyperparameter", "Search space", "Selected"], rows, star=True)
+      "p{0.40\\textwidth} p{0.31\\textwidth} X", ["Hyperparameter", "Search space", "Selected"], rows, star=True)
 
 # Main results --------------------------------------------------------------------------------------
 rows = []
