@@ -136,7 +136,7 @@ Each table and figure of the manuscript is built from the versioned files below.
 | Table 7, Appendix B (cost of federation) | `30_analysis.py` | `outputs/analysis.json` (`decomposition`) |
 | Table 8, Appendix B (communication budget) | `30_analysis.py` | `outputs/evaluation/fl_budget_sensitivity.csv` |
 | Row-wise aggregation and logistic regression (Section 5.4) | `26_eval_extensions.py` | `outputs/evaluation/extensions.json`, `extensions_rounds.csv.gz` |
-| Student-cluster bootstrap (Sections 5.3–5.4) | `34_review_analyses.py` | `outputs/review_analyses.json` (`bootstrap`) |
+| Table 9, Appendix B (bootstrap contrasts; embedding rows after training) | `25_embedding_diagnostic.py`, `26_eval_extensions.py`, `34_review_analyses.py` | `outputs/review_analyses.json` (`bootstrap`), `outputs/embedding_diagnostic.json`, `outputs/evaluation/extensions.json` |
 | Figure 3 (local optimizer in the searches) | `10`–`12_tune_*.py` | `outputs/analysis.json` (`tuning`: best value per optimizer, fANOVA importances) |
 | Figure 4 (test AUC and balanced accuracy) | `20`–`22_eval_*.py` | `outputs/evaluation/*.json` (per seed) |
 | Figure 5 (trajectories per round) | `22_eval_federated.py` | `outputs/evaluation/fl_rounds.csv.gz` (every round of every run) |

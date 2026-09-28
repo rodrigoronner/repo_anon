@@ -221,3 +221,72 @@ Model & Global AUC & Per-student AUC & Spearman with centralized DNN & Same top 
 """)
 with open(os.path.join(OUT_DIR, "latex", "tab_perstudent.tex"), "w") as fh:
     fh.write(tex)
+
+
+# LaTeX table: supplementary estimates (bootstrap contrasts and embedding-table diagnostics) ---------------
+def ci3(c):
+    n = lambda v: f"{v:.3f}".replace("-", "$-$") if round(v, 3) != 0 else "0.000"
+    return f"{n(c['diff'])} [{n(c['ci95'][0])}, {n(c['ci95'][1])}]"
+
+
+BOOT_ROWS = [("cost_FedAvg", "Cost of federation: DNN, centralized $-$ FedAvg"),
+             ("cost_FedProx_mu0.1", r"Cost of federation: DNN, centralized $-$ FedProx $\mu=0.1$"),
+             ("cost_FedProx_mu0.5", r"Cost of federation: DNN, centralized $-$ FedProx $\mu=0.5$"),
+             ("cost_FedProx_mu1.0", r"Cost of federation: DNN, centralized $-$ FedProx $\mu=1.0$"),
+             ("cost_FedProx_muTuned", r"Cost of federation: DNN, centralized $-$ FedProx, $\mu$ tuned"),
+             ("cost_features_only", "Cost of federation, features only"),
+             ("centralized_gain_from_embeddings", "Gain from embeddings, centralized"),
+             ("fedavg_loss_from_embeddings", "FedAvg: features only $-$ full network"),
+             ("rowwise_minus_dense", "FedAvg: row-wise (tuned) $-$ dense"),
+             ("cost_logreg", "Cost of federation, logistic regression"),
+             ("recommender_minus_logreg_centralized", "DNN $-$ logistic regression, centralized"),
+             ("recommender_minus_logreg_federated", "FedAvg: recommender $-$ logistic regression"),
+             ("cost_preliminary", "Cost of federation, preliminary configuration")]
+ed = read(os.path.join(OUT_DIR, "embedding_diagnostic.json"))["summary"]
+ext = [r for r in read(os.path.join(EVAL_DIR, "extensions.json"))["runs"] if r["embeddings_final"]]
+
+
+def emb(cond_runs=None, key=None):
+    if key:
+        u, sk = ed[key]["user_embedding"], ed[key]["skill_embedding"]
+        return u["norm_final"][0], u["moved"][0], sk["norm_final"][0], sk["moved"][0]
+    vals = [(r["embeddings_final"]["user_embedding"]["norm_final"], r["embeddings_final"]["user_embedding"]["moved"],
+             r["embeddings_final"]["skill_embedding"]["norm_final"], r["embeddings_final"]["skill_embedding"]["moved"])
+            for r in cond_runs]
+    return tuple(float(np.mean(v)) for v in zip(*vals))
+
+
+EMB_ROWS = [("DNN, centralized, decay on all parameters", emb(key="cdnn_tuned")),
+            ("DNN, centralized, no decay on the tables", emb(key="cdnn_noEmbDecay")),
+            ("FedAvg, decay on all parameters", emb(key="FedAvg")),
+            ("FedAvg, no decay on the tables", emb(key="FedAvg_noEmbDecay")),
+            ("FedAvg, row-wise (FedAvg config.)", emb([r for r in ext if r["condition"] == "fl_FedAvg_rowwise_samecfg"])),
+            ("FedAvg, row-wise (tuned)", emb([r for r in ext if r["condition"] == "fl_FedAvg_rowwise"]))]
+init_norm = ed["FedAvg"]["user_embedding"]["norm_init"][0]
+lines = [r"\SetCell[c=5]{l}\textit{(a) Contrasts with student-cluster bootstrap 95\% CI} & & & & \\",
+         r"Contrast & \SetCell[c=2]{c}Global AUC & & \SetCell[c=2]{c}Per-student AUC & \\"]
+for k, lab in BOOT_ROWS:
+    c = out["bootstrap"][k]
+    lines.append(f"{lab} & \\SetCell[c=2]{{c}}{ci3(c['global_auc'])} & & \\SetCell[c=2]{{c}}{ci3(c['per_student_auc'])} & \\\\")
+lines += [r"\midrule",
+          r"\SetCell[c=5]{l}\textit{(b) Embedding rows after training (mean over 10 seeds; initial mean norm " + f"{init_norm:.1f}" + r")} & & & & \\",
+          r"Condition & Student rows: norm & Student rows: moved & Skill rows: norm & Skill rows: moved \\"]
+for lab, (un, um, sn, sm) in EMB_ROWS:
+    lines.append(f"{lab} & {un:.2f} & {um:.2f} & {sn:.2f} & {sm:.2f} \\\\")
+tex = (r"""\begin{table*}[!htbp]
+\centering
+\caption[Supplementary estimates]{Supplementary estimates. (a) Differences in test AUC with 95\% confidence intervals from a student-cluster bootstrap (2{,}000 replicates, one random evaluation seed per model in each replicate), which account for the sampling of test students as well as for training randomness. (b) Mean norm of the embedding rows at the end of training and mean distance each row moved from its initial value; federated models are taken at round 1{,}000, centralized models at the selected epoch. Data: own experiments.}
+\label{tab:supplementary}
+\begin{tblr}{
+    colspec = {X[3.4,l] X[1,c] X[1,c] X[1,c] X[1,c]},
+    cells   = {font=\small},
+    rowsep  = 1pt,
+    row{2,17}  = {font=\small\bfseries},
+    }
+\toprule
+""" + "\n".join(lines) + "\n" + r"""\bottomrule
+\end{tblr}
+\end{table*}
+""")
+with open(os.path.join(OUT_DIR, "latex", "tab_supplementary.tex"), "w") as fh:
+    fh.write(tex)
