@@ -6,6 +6,80 @@ produced by `run_all.sh`, starting from the raw ASSISTments 2009–2010
 skill-builder file, which is included in `data/raw/` together with the
 examples produced by the pipeline.
 
+## In plain language
+
+**The problem.** Online learning platforms record every exercise a student
+does: what they got right, what they got wrong, how long they took. From these
+records, a program can predict which topics a student has already mastered and
+recommend the next exercise, much as a private tutor would. These records,
+however, are personal data, often of children and teenagers, and data
+protection laws such as Brazil's LGPD require special care with them. The usual
+way to build such systems is to gather every student's data on a single
+server, which creates a privacy risk.
+
+**The idea we tested.** *Federated learning* reverses the flow: instead of the
+data travelling to the program, the program travels to the data. Each student's
+device trains its own copy of the model, and only what was *learned* (the model
+update), never the student's answers, is sent back and combined with the
+others. The raw data never leave the device.
+
+**Our questions.** (1) How much prediction quality is lost by protecting the
+data this way? (2) Can the system still personalize, that is, learn something
+specific about each student? (3) Which of the known ways of combining the
+students' updates works best?
+
+**How we did it.** We used a public dataset of 1,159 students solving math
+exercises on an online tutoring platform, treating each student as a separate
+participant. We compared the privacy-preserving system with a traditional one
+that pools all data, making the comparison fair: the same model on both sides,
+the same tuning effort, no hidden "cheating" in how the data are prepared, and
+every experiment repeated ten times.
+
+**What we found.**
+
+1. **The loss in quality is small.** On a scale from 0.5 (guessing) to 1
+   (always right), the traditional system scored 0.788 and the
+   privacy-preserving one 0.777, about one percentage point apart.
+2. **For the decision that matters, there is practically no loss.** To
+   recommend the next exercise, what counts is ranking each student's own
+   topics. Here the two systems were almost identical: for 89% of the students
+   they would put the same topic first.
+3. **The "individual" part of the model is not learned, and it is barely
+   missed.** The model had a component meant to represent each student
+   individually. In the privacy-preserving version this component learns
+   nothing, because each student contributes too little data; even when we
+   fixed that with a dedicated technique, predictions did not improve, and it
+   helped very little in the traditional system too. This component can
+   therefore be *removed*: it costs nothing and *increases* privacy, since it
+   was the part that could most identify a student.
+4. **A simple model is enough.** A classic statistical formula using only each
+   student's and each topic's past success rates lost *nothing* when trained
+   in the privacy-preserving way.
+5. **It is easy to be misled when evaluating these systems.** An earlier
+   version of this study reached wrong conclusions: a common way of preparing
+   the data let the answer "leak" into the model, a widely used score (F1) gave
+   high marks even to a system that simply predicted "the student will succeed"
+   for everyone, and a poorly configured system made privacy look thirteen
+   times more costly than it really is.
+
+**Why it matters.** It shows that schools and learning platforms can protect
+students' data, in line with the LGPD, *without hurting the recommendation of
+activities*; it tells developers how to design these systems (remove, or keep on
+the device, the individual part of the model; tune the local training, which
+matters more than the choice of combination rule); and it gives researchers a
+more rigorous way of evaluating them, with common pitfalls identified. All code
+and data are in this repository.
+
+**Honest limits.** The study uses a single dataset (2009–2010, math, a platform
+in the United States), so the results must be confirmed with other students and
+subjects. Federated learning alone does not guarantee full privacy; additional
+protections, such as secure aggregation and differential privacy, are
+discussed in the manuscript.
+
+**In one sentence:** it is possible to personalize teaching while protecting
+students' data, at a minimal cost in quality, provided the system is well
+designed and carefully evaluated.
+
 ## What the study does
 
 Each of the 1,159 students of ASSISTments 2009–2010 is a federated client. A
