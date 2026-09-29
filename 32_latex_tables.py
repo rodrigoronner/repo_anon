@@ -123,7 +123,8 @@ table("tab:search", "Optuna search spaces (TPE sampler, validation AUC objective
 
 # Main results --------------------------------------------------------------------------------------
 rows = []
-for n, lab in (("always_positive", "Always positive"), ("student_history_mean", "Student history mean"),
+for n, lab in (("always_positive", "Always positive"), ("stratified_random", "Stratified random guess"),
+               ("student_history_mean", "Student history mean"),
                ("skill_history_mean", "Skill history mean")):
     m = T[n]
     rows.append([lab, f"{m['roc_auc']:.3f}", f"{m['balanced_accuracy']:.3f}", "--", f"{m['f1_score']:.3f}",
@@ -135,7 +136,7 @@ for k, lab in [("xgboost", "XGBoost, centralized"), ("cdnn_tuned", "DNN, central
     rows.append([lab, pm(m["at_0.5.roc_auc"]), pm(m["at_0.5.balanced_accuracy"]),
                  pm(m["calibrated.balanced_accuracy"]), pm(m["at_0.5.f1_score"]), pm(m["at_0.5.positive_rate"])])
 table("tab:main", "Test-set performance (mean $\\pm$ SD over 10 seeds). Checkpoint and calibrated threshold are "
-      "selected on validation data. The first three rows are learning-free references. Data: own experiments.",
+      "selected on validation data. The first four rows are learning-free references. Data: own experiments.",
       "l X[c] X[c] X[c] X[c] X[c]",
       ["Model", "ROC AUC", "Bal. acc. (0.5)", "Bal. acc. (calibr.)", "F1 (0.5)", "Pred. positive"], rows, star=True)
 
@@ -148,11 +149,15 @@ spec += [("federation_cost_v1_config", "Federation cost, preliminary configurati
          ("fl_FedAvg_minus_xgboost", "FedAvg $-$ centralized XGBoost")]
 for key, lab in spec:
     a, b = D["at_0.5.roc_auc"][key], D["calibrated.balanced_accuracy"][key]
-    rows.append([lab, f"{num(a['diff'])} [{num(a['ci95'][0])}, {num(a['ci95'][1])}]",
-                 f"{num(b['diff'])} [{num(b['ci95'][0])}, {num(b['ci95'][1])}]"])
+    rows.append([lab, f"{num(a['diff'])} [{num(a['ci95'][0])}, {num(a['ci95'][1])}]", f"{a['cohens_d']:.1f}".replace("-", "$-$"),
+                 f"{num(b['diff'])} [{num(b['ci95'][0])}, {num(b['ci95'][1])}]", f"{b['cohens_d']:.1f}".replace("-", "$-$")])
 table("tab:decomposition", "Architecture effect and cost of federation: difference of means with Welch 95\\% "
-      "confidence interval over 10 seeds per model. Data: own experiments.",
-      "X[2.2,l] X[c] X[c]", ["Contrast", "ROC AUC", "Balanced accuracy (calibrated)"], rows, star=True,
+      "confidence interval over 10 seeds per model, and Cohen's $d$. Because $d$ divides the difference by the "
+      "variation between seeds, which is very small here, large values of $d$ indicate that a difference is "
+      "consistent across repetitions, not that it is large in practice; its practical size is the difference in AUC "
+      "or balanced accuracy itself. Data: own experiments.",
+      "X[2.6,l] X[1.5,c] X[0.5,c] X[1.5,c] X[0.5,c]",
+      ["Contrast", "ROC AUC", "$d$", "Balanced accuracy (calibrated)", "$d$"], rows, star=True,
       short="Architecture effect and cost of federation")
 
 # Strategy comparisons ---------------------------------------------------------------------------------

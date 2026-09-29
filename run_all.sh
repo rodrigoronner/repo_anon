@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Full pipeline from the raw ASSISTments file to the manuscript tables and figures.
-# Environment: Python 3.11 with requirements.txt. Wall time on a 10-core laptop: about 6 h.
+# Environment: Python 3.11 with requirements.txt. Wall time on a 10-core laptop: about 7 h.
 set -euo pipefail
 cd "$(dirname "$0")"
 PY=${PY:-python}
@@ -36,9 +36,11 @@ $PY 23_flower_crosscheck.py       # Flower 1.7 with matched sampling, seed 42 x 
 $PY 24_ablation.py               # input blocks and weight decay on the embedding tables
 $PY 25_embedding_diagnostic.py   # embedding norms at initialization and after training
 $PY 26_eval_extensions.py        # row-wise aggregation and logistic regression, 10 seeds
+$PY 27_robustness.py            # temporal validation; FedProx with the local optimizer of FedAvg
 
 $PY 30_analysis.py
 $PY 31_figures.py
 $PY 32_latex_tables.py
 $PY 33_ablation_analysis.py
 $PY 34_review_analyses.py        # per-student AUC, agreement, student bootstrap, equivalence margins
+$PY 35_robustness_analysis.py   # analysis of the robustness runs

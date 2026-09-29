@@ -205,7 +205,7 @@ for k, lab in ROWS:
     lines.append(f"{lab} & {pm(m['global_auc'])} & {pm(m['per_student_auc'])} & {agree} \\\\")
 tex = (r"""\begin{table*}[ht]
 \centering
-\caption{Global and per-student ROC AUC on the test set (mean $\pm$ SD over 10 seeds), and agreement of federated models with the centralized DNN. Per-student AUC is computed within each of the """ + str(out["n_students_eligible"]) + r""" students with both outcomes in the test window and averaged; it measures how well a model orders the skills of one student. Agreement uses seed-averaged scores: median within-student Spearman correlation, and share of students for whom both models rank the same skill first. Data: own experiments.}
+\caption{Global and per-student ROC AUC on the test set (mean $\pm$ SD over 10 seeds), and agreement of federated models with the centralized DNN. Per-student AUC is computed within each of the """ + str(out["n_students_eligible"]) + r""" students with both outcomes in the test window and averaged; it measures how well a model orders the skills of one student. Agreement uses seed-averaged scores: median within-student Spearman correlation, computed over the " + f"{out['agreement']['fl_FedAvg']['n_students']:,}" + r" students with at least three test pairs, and share of students for whom both models rank the same skill first, computed over the " + f"{out['agreement']['fl_FedAvg']['n_top1']:,}" + r" students with at least two test pairs. Data: own experiments.}
 \label{tab:perstudent}
 \begin{tblr}{
     colspec = {X[2.6,l] X[1.2,c] X[1.2,c] X[1.1,c] X[1,c]},
@@ -275,7 +275,7 @@ for lab, (un, um, sn, sm) in EMB_ROWS:
     lines.append(f"{lab} & {un:.2f} & {um:.2f} & {sn:.2f} & {sm:.2f} \\\\")
 tex = (r"""\begin{table*}[!htbp]
 \centering
-\caption[Supplementary estimates]{Supplementary estimates. (a) Differences in test AUC with 95\% confidence intervals from a student-cluster bootstrap (2{,}000 replicates, one random evaluation seed per model in each replicate), which account for the sampling of test students as well as for training randomness. (b) Mean norm of the embedding rows at the end of training and mean distance each row moved from its initial value; federated models are taken at round 1{,}000, centralized models at the selected epoch. Data: own experiments.}
+\caption[Supplementary estimates]{Supplementary estimates. (a) Differences in test AUC with 95\% confidence intervals from a student-cluster bootstrap (2{,}000 replicates, one random evaluation seed per model in each replicate), which account for the sampling of test students as well as for training randomness. (b) Mean norm of the embedding rows at the end of training and mean distance each row moved from its initial value; federated models are taken at round 1{,}000, centralized models at the selected epoch. The distance moved includes the shrinkage caused by weight decay and therefore does not by itself indicate learning. Data: own experiments.}
 \label{tab:supplementary}
 \begin{tblr}{
     colspec = {X[3.4,l] X[1,c] X[1,c] X[1,c] X[1,c]},

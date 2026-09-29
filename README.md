@@ -115,11 +115,15 @@ row-wise aggregation of the embedding tables tests whether they can be learned.
 - Logistic regression on the three features: 0.780 centralized, 0.779 federated.
 - FedAvg and FedProx are equivalent within ±0.005 AUC (smallest TOST margins
   0.0007–0.0047).
+- Robustness: with a temporal validation window (fit on the first training window,
+  validate on the later one) the conclusions hold, and the untrained student
+  embedding even lowers FedAvg's accuracy; run with the same local optimizer as
+  FedAvg (SGD), FedProx is as stable as FedAvg.
 - Leave-one-out encoding of the aggregates leaks the label
   (validation AUC 0.928 against 0.719 on test).
 
-The complete results are in `outputs/REPORT.md`, `outputs/REPORT_ablation.md`
-and `outputs/REPORT_review.md`.
+The complete results are in `outputs/REPORT.md`, `outputs/REPORT_ablation.md`,
+`outputs/REPORT_review.md` and `outputs/REPORT_robustness.md`.
 
 ## Where each result of the manuscript comes from
 
@@ -132,11 +136,12 @@ Each table and figure of the manuscript is built from the versioned files below.
 | Table 3 (global and per-student AUC, agreement) | `26_eval_extensions.py`, `34_review_analyses.py` | `outputs/review_analyses.json` (`models`, `agreement`), `outputs/REPORT_review.md` |
 | Table 4 (ablation) | `24_ablation.py`, `33_ablation_analysis.py` | `outputs/ablation_analysis.json`, `outputs/REPORT_ablation.md`; per seed in `outputs/evaluation/ablation.json`, predictions in `outputs/evaluation/ablation_preds/` |
 | Table 5 (FedAvg vs FedProx) | `30_analysis.py` | `outputs/analysis.json` (`strategy_comparisons`); smallest equivalence margins in `outputs/review_analyses.json` |
-| Table 6, Appendix A (search spaces and selections) | `10`–`13_tune_*.py` | `outputs/tuning/*_best.json`, `outputs/tuning/*_trials.csv` |
-| Table 7, Appendix B (cost of federation) | `30_analysis.py` | `outputs/analysis.json` (`decomposition`) |
-| Table 8, Appendix B (communication budget) | `30_analysis.py` | `outputs/evaluation/fl_budget_sensitivity.csv` |
+| Table 6 (robustness: temporal validation; FedProx with the local optimizer of FedAvg) | `27_robustness.py`, `35_robustness_analysis.py` | `outputs/robustness_analysis.json`, `outputs/REPORT_robustness.md`; runs in `outputs/evaluation/robustness/` |
+| Table 7, Appendix A (search spaces and selections) | `10`–`13_tune_*.py` | `outputs/tuning/*_best.json`, `outputs/tuning/*_trials.csv` |
+| Table 8, Appendix B (cost of federation, with Cohen's d) | `30_analysis.py` | `outputs/analysis.json` (`decomposition`) |
+| Table 9, Appendix B (communication budget) | `30_analysis.py` | `outputs/evaluation/fl_budget_sensitivity.csv` |
 | Row-wise aggregation and logistic regression (Section 5.4) | `26_eval_extensions.py` | `outputs/evaluation/extensions.json`, `extensions_rounds.csv.gz` |
-| Table 9, Appendix B (bootstrap contrasts; embedding rows after training) | `25_embedding_diagnostic.py`, `26_eval_extensions.py`, `34_review_analyses.py` | `outputs/review_analyses.json` (`bootstrap`), `outputs/embedding_diagnostic.json`, `outputs/evaluation/extensions.json` |
+| Table 10, Appendix B (bootstrap contrasts; embedding rows after training) | `25_embedding_diagnostic.py`, `26_eval_extensions.py`, `34_review_analyses.py` | `outputs/review_analyses.json` (`bootstrap`), `outputs/embedding_diagnostic.json`, `outputs/evaluation/extensions.json` |
 | Figure 3 (local optimizer in the searches) | `10`–`12_tune_*.py` | `outputs/analysis.json` (`tuning`: best value per optimizer, fANOVA importances) |
 | Figure 4 (test AUC and balanced accuracy) | `20`–`22_eval_*.py` | `outputs/evaluation/*.json` (per seed) |
 | Figure 5 (trajectories per round) | `22_eval_federated.py` | `outputs/evaluation/fl_rounds.csv.gz` (every round of every run) |
@@ -173,8 +178,8 @@ selected configurations can be inspected or reused.
 | `common.py`, `tuning_utils.py` | Metrics, threshold calibration, Optuna helpers |
 | `01`–`03` | Data preparation, learning-free references, leakage diagnostic |
 | `10`–`13` | Optuna studies (XGBoost, centralized recommender, one per federated strategy, row-wise aggregation, logistic regression) |
-| `20`–`26` | Evaluation over 10 seeds, Flower verification, ablation, embedding diagnostic, row-wise aggregation and logistic regression |
-| `30`–`34` | Statistical analysis, ablation analysis, per-student and bootstrap analyses, and the plotting and table-formatting code of the manuscript |
+| `20`–`27` | Evaluation over 10 seeds, Flower verification, ablation, embedding diagnostic, row-wise aggregation and logistic regression, robustness analyses |
+| `30`–`35` | Statistical analysis, ablation analysis, per-student and bootstrap analyses, and the plotting and table-formatting code of the manuscript |
 | `outputs/tuning/` | Optuna journals, trials and selected configurations |
 | `outputs/evaluation/` | Per-seed results, per-round logs, test predictions of every model |
 | `data/raw/` | Original ASSISTments 2009–2010 skill-builder file (compressed) |
