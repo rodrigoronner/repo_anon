@@ -17,6 +17,7 @@ Per-student AUC over 825 students with both classes in the test window (8534 of 
 | Logistic regression, FedAvg | 0.779 ± 0.001 | 0.720 ± 0.000 |
 | Recommender without embeddings, centralized | 0.779 ± 0.001 | 0.720 ± 0.000 |
 | Recommender without embeddings, FedAvg | 0.779 ± 0.000 | 0.720 ± 0.000 |
+| Recommender, FedAvg, no weight decay on the embedding tables | 0.731 ± 0.003 | 0.723 ± 0.006 |
 | Recommender, centralized, preliminary configuration | 0.775 ± 0.003 | 0.718 ± 0.008 |
 | Recommender, FedAvg, preliminary configuration | 0.630 ± 0.008 | 0.685 ± 0.011 |
 | Skill history mean (no model) | 0.699 ± 0.000 | 0.720 ± 0.000 |

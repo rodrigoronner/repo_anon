@@ -51,6 +51,7 @@ MODELS = {
     "clr_tuned": "Logistic regression, centralized", "fl_LogReg": "Logistic regression, FedAvg",
     "cdnn_features_only": "Recommender without embeddings, centralized",
     "FedAvg_features_only": "Recommender without embeddings, FedAvg",
+    "FedAvg_noEmbDecay": "Recommender, FedAvg, no weight decay on the embedding tables",
     "cdnn_v1": "Recommender, centralized, preliminary configuration",
     "fl_FedAvg_v1protocol": "Recommender, FedAvg, preliminary configuration",
 }
@@ -190,6 +191,8 @@ ROWS = [("skill_history_mean", "Skill history mean"),
         ("fl_FedAvg_rowwise_samecfg", "FedAvg, row-wise (FedAvg config.)"),
         ("fl_FedAvg_rowwise", "FedAvg, row-wise (tuned)"),
         ("fl_LogReg", "Logistic regression, FedAvg"),
+        ("FedAvg_features_only", "FedAvg, features only"),
+        ("FedAvg_noEmbDecay", "FedAvg, no decay on the embedding tables"),
         ("fl_FedAvg_v1protocol", "FedAvg, preliminary config.")]
 
 
@@ -205,7 +208,7 @@ for k, lab in ROWS:
     lines.append(f"{lab} & {pm(m['global_auc'])} & {pm(m['per_student_auc'])} & {agree} \\\\")
 tex = (r"""\begin{table*}[ht]
 \centering
-\caption{Global and per-student ROC AUC on the test set (mean $\pm$ SD over 10 seeds), and agreement of federated models with the centralized DNN. Per-student AUC is computed within each of the """ + str(out["n_students_eligible"]) + r""" students with both outcomes in the test window and averaged; it measures how well a model orders the skills of one student. Agreement uses seed-averaged scores: median within-student Spearman correlation, computed over the " + f"{out['agreement']['fl_FedAvg']['n_students']:,}" + r" students with at least three test pairs, and share of students for whom both models rank the same skill first, computed over the " + f"{out['agreement']['fl_FedAvg']['n_top1']:,}" + r" students with at least two test pairs. Data: own experiments.}
+\caption{Global and per-student ROC AUC on the test set (mean $\pm$ SD over 10 seeds), and agreement of federated models with the centralized DNN. Per-student AUC is computed within each of the """ + str(out["n_students_eligible"]) + r""" students with both outcomes in the test window and averaged; it measures how well a model orders the skills of one student. Agreement uses seed-averaged scores: median within-student Spearman correlation, computed over the @NSTUD@ students with at least three test pairs, and share of students for whom both models rank the same skill first, computed over the @NTOP@ students with at least two test pairs. Data: own experiments.}
 \label{tab:perstudent}
 \begin{tblr}{
     colspec = {X[2.6,l] X[1.2,c] X[1.2,c] X[1.1,c] X[1,c]},
@@ -219,6 +222,8 @@ Model & Global AUC & Per-student AUC & Spearman with centralized DNN & Same top 
 \end{tblr}
 \end{table*}
 """)
+tex = tex.replace("@NSTUD@", f"{out['agreement']['fl_FedAvg']['n_students']:,}").replace(
+    "@NTOP@", f"{out['agreement']['fl_FedAvg']['n_top1']:,}")
 with open(os.path.join(OUT_DIR, "latex", "tab_perstudent.tex"), "w") as fh:
     fh.write(tex)
 

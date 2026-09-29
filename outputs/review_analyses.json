@@ -145,6 +145,17 @@
         0.0
       ]
     },
+    "FedAvg_noEmbDecay": {
+      "label": "Recommender, FedAvg, no weight decay on the embedding tables",
+      "global_auc": [
+        0.7307869117748158,
+        0.0028847622230066196
+      ],
+      "per_student_auc": [
+        0.7231060768397196,
+        0.005529581214915394
+      ]
+    },
     "cdnn_v1": {
       "label": "Recommender, centralized, preliminary configuration",
       "global_auc": [

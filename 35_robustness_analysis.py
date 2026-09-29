@@ -140,6 +140,7 @@ with open(os.path.join(OUT_DIR, "REPORT_robustness.md"), "w") as fh:
 print("\n".join(L))
 
 # LaTeX table ------------------------------------------------------------------------------------------
+pcx = lambda v: "0\\%" if v == 0 else ("$<$0.1\\%" if v < 0.001 else f"{100 * v:.0f}\\%")
 pmx = lambda x, d=3: f"{x[0]:.{d}f} $\\pm$ {x[1]:.{d}f}"
 TLAB = {"T_cdnn_all": "DNN, centralized", "T_cdnn_no_user": "DNN, centralized, without student embedding",
         "T_cdnn_features_only": "DNN, centralized, features only", "T_FedAvg_all": "FedAvg",
@@ -156,10 +157,10 @@ BLAB = {"FedAvg (SGD)": "FedAvg (SGD)", "FedProx mu=1.0, SGD": r"FedProx $\mu=1.
         "FedProx mu tuned, Adam (tuned)": r"FedProx, $\mu$ tuned, Adam (tuned config.)"}
 for lab, m in out["same_optimizer"].items():
     rows.append(f"{BLAB[lab]} & {pmx(m['test_auc'])} & {m['late_sd_auc'][0]:.3f} & "
-                f"{m['lag1'][0]:.2f}".replace("-", "$-$") + f" & {100 * m['share_rounds_auc_below_0.5'][0]:.0f}\\% \\\\")
+                f"{m['lag1'][0]:.2f}".replace("-", "$-$") + f" & {pcx(m['share_rounds_auc_below_0.5'][0])} \\\\")
 tex = (r"""\begin{table*}[!htbp]
 \centering
-\caption[Robustness analyses]{Robustness analyses (mean $\pm$ SD over 10 seeds; configurations fixed, not re-tuned). (a) Temporal validation: the models are fitted on the first training window and the checkpoint is selected on the second, which lies later in every student's history; the test set is unchanged. Because only half of the training examples are used for fitting, absolute values are slightly lower than in the main protocol. (b) FedProx run with the local configuration selected for FedAvg (SGD), compared with FedAvg and with the Adam configurations selected by the FedProx searches. Data: own experiments.}
+\caption[Robustness analyses]{Robustness analyses (mean $\pm$ SD over 10 seeds; configurations fixed, not re-tuned). (a) Temporal validation: the models are fitted on the first training window and the checkpoint is selected on the second, which lies later in every student's history; the test set is unchanged. Because only half of the training examples are used for fitting, absolute values are slightly lower than in the main protocol. (b) FedProx run with the local configuration selected for FedAvg (SGD), compared with FedAvg and with the Adam configurations selected by the FedProx searches; values below 0.1\% of rounds correspond to the first three rounds, before training takes effect. Data: own experiments.}
 \label{tab:robustness}
 \begin{tblr}{
     colspec = {X[3,l] X[1.2,c] X[1.2,c] X[1.2,c] X[1.1,c]},

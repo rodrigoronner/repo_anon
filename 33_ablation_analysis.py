@@ -166,12 +166,13 @@ rows += [r"\midrule", r"\SetCell[c=5]{l}\textit{(b) Weight decay on the embeddin
 for base, r in out["emb_decay"].items():
     lw, lo = r.get("late_with_decay"), r.get("late_without_emb_decay")
     sd = f"{lw['late_sd_auc'][0]:.3f} / {lo['late_sd_auc'][0]:.3f}" if lw else "--"
-    below = (f"{100 * lw['share_rounds_auc_below_0.5'][0]:.0f}\\% / {100 * lo['share_rounds_auc_below_0.5'][0]:.0f}\\%"
+    pc = lambda v: "0\\%" if v == 0 else ("$<$0.1\\%" if v < 0.001 else f"{100 * v:.0f}\\%")
+    below = (f"{pc(lw['share_rounds_auc_below_0.5'][0])} / {pc(lo['share_rounds_auc_below_0.5'][0])}"
              if lw else "--")
     rows.append(f"{BLAB[base]} & {pmt(r['with_decay']['auc'])} & {pmt(r['without_emb_decay']['auc'])} & {sd} & {below} \\\\")
 tex = (r"""\begin{table*}[ht]
 \centering
-\caption{Ablation study: test ROC AUC (mean $\pm$ SD over 10 seeds) of the tuned configurations, not re-tuned. (a) Networks trained with subsets of the inputs; the federation cost is the Welch difference between the centralized DNN and FedAvg. (b) Tuned configurations trained with weight decay on all parameters (``with'', as in the main runs) or on the perceptron only (``without''); the last two columns describe the federated trajectories. Data: own experiments.}
+\caption{Ablation study: test ROC AUC (mean $\pm$ SD over 10 seeds) of the tuned configurations, not re-tuned. (a) Networks trained with subsets of the inputs; the federation cost is the Welch difference between the centralized DNN and FedAvg. (b) Tuned configurations trained with weight decay on all parameters (``with'', as in the main runs) or on the perceptron only (``without''); the last two columns describe the federated trajectories; values below 0.1\% correspond to the first three rounds, before training takes effect. Data: own experiments.}
 \label{tab:ablation}
 \begin{tblr}{
     colspec = {X[2.3,l] X[1.3,c] X[1.3,c] X[1.6,c] X[1.5,c]},
