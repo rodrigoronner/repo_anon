@@ -133,7 +133,7 @@ Each table and figure of the manuscript is built from the versioned files below.
 |---|---|---|
 | Table 1 (cohort) | `01_prepare_data.py` | `data/processed_meta.json` |
 | Table 2 (test-set performance) | `20`–`22_eval_*.py`, `30_analysis.py` | `outputs/analysis.json` (`summary`, `trivial`); per seed in `outputs/evaluation/*.json` |
-| Table 3 (global and per-student AUC, agreement) | `26_eval_extensions.py`, `34_review_analyses.py` | `outputs/review_analyses.json` (`models`, `agreement`), `outputs/REPORT_review.md` |
+| Table 3 (global and per-student AUC, agreement) | `24_ablation.py`, `26_eval_extensions.py`, `34_review_analyses.py` | `outputs/review_analyses.json` (`models`, `agreement`), `outputs/REPORT_review.md` |
 | Table 4 (ablation) | `24_ablation.py`, `33_ablation_analysis.py` | `outputs/ablation_analysis.json`, `outputs/REPORT_ablation.md`; per seed in `outputs/evaluation/ablation.json`, predictions in `outputs/evaluation/ablation_preds/` |
 | Table 5 (FedAvg vs FedProx) | `30_analysis.py` | `outputs/analysis.json` (`strategy_comparisons`); smallest equivalence margins in `outputs/review_analyses.json` |
 | Table 6 (robustness: temporal validation; FedProx with the local optimizer of FedAvg) | `27_robustness.py`, `35_robustness_analysis.py` | `outputs/robustness_analysis.json`, `outputs/REPORT_robustness.md`; runs in `outputs/evaluation/robustness/` |
@@ -147,7 +147,7 @@ Each table and figure of the manuscript is built from the versioned files below.
 | Figure 5 (trajectories per round) | `22_eval_federated.py` | `outputs/evaluation/fl_rounds.csv.gz` (every round of every run) |
 | Embedding norms (Section 5.4) | `25_embedding_diagnostic.py` | `outputs/embedding_diagnostic.json` |
 | Leave-one-out leakage (Section 4.2) | `03_loo_leakage_diagnostic.py` | `outputs/evaluation/loo_leakage_diagnostic.json` |
-| Verification against Flower (Section 5.8) | `23_flower_crosscheck.py` | `outputs/evaluation/flower_crosscheck.json`, `flower_crosscheck_seed42.csv` |
+| Verification against Flower (Section 5.9) | `23_flower_crosscheck.py` | `outputs/evaluation/flower_crosscheck.json`, `flower_crosscheck_seed42.csv` |
 
 Figures 1 (feature and label windows) and 2 (data flow of the federated
 recommender) are diagrams drawn in the manuscript source and contain no data.
@@ -198,7 +198,7 @@ selected configurations can be inspected or reused.
   samples the same clients in every round and seeds each local update
   identically, so strategy differences are not confounded with sampling noise.
 - **Architecture frozen from the centralized search.** This favors the
-  centralized reference, so the measured cost of federation is conservative.
+  centralized reference, so the measured cost of federation is likely conservative.
 - **Data flow.** Raw interactions, answers, labels and student-level features
   stay on each client; clients exchange model weights, and the skill statistic
   requires per-skill totals that a deployment would obtain through secure
